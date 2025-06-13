@@ -1,124 +1,173 @@
-/* Jemdoc CSS with blue theme */
+/* Final High-End Jemdoc CSS Redesign */
 
-/* Set a soft blue gradient background */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto&display=swap');
+
+/* Root Palette */
+:root {
+    --primary-color: #224b8d;
+    --primary-dark: #1a3b6e;
+    --bg-gradient: linear-gradient(135deg, #f5f7fa, #e4ecf7);
+    --menu-bg: rgba(255, 255, 255, 0.85);
+}
+
+/* Body Styling */
 body {
-    background: linear-gradient(to bottom, #f0f4ff, #e6ecff);
-    font-family: "Inter", sans-serif;
-    color: #333;
-    padding-bottom: 8px;
     margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    background: var(--bg-gradient);
+    color: #333;
 }
 
-/* Navigation menu styling */
+/* Layout */
+#tlayout {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Navigation Menu Styling */
 #layout-menu {
-    background: white;
-    border-radius: 10px;
-    padding: 1em;
-    font-size: 1.0em;
-    width: auto;
-    color: #224b8d;
-    text-align: left;
-    border: 2px solid #527bbd;
+    position: sticky;
+    top: 30px;
+    background: var(--menu-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 30px 20px;
+    min-width: 250px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-#layout-menu a {
-    color: #224b8d;
-    text-decoration: none;
+.menu-category {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.menu-item a {
     display: block;
-    padding: 8px;
-    border-radius: 5px;
-    transition: background 0.3s ease-in-out;
-}
-
-#layout-menu a:hover, #layout-menu a:focus {
-    background: #527bbd; 
-    color: white;
-}
-
-#layout-menu a.current:link, #layout-menu a.current:visited {
-    background: #527bbd;
-    color: white;
-    font-weight: bold;
-}
-
-/* Add blue underline below 'Related Links' title */
-div.menu-category {
-    font-weight: bold;
-    border-bottom: 2px solid #527bbd;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-/* Content area styling */
-#layout-content {
-    background: white;
-    padding: 2em;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 12px 15px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
 }
 
-/* Headings styling */
+.menu-item a:hover {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    transform: translateX(8px);
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Content Styling */
+#layout-content {
+    flex: 1;
+    background: #fff;
+    padding: 50px 50px 80px 50px;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Titles */
 h1, h2, h3 {
-    color: #224b8d;
-    border-bottom: 2px solid #527bbd;
-    padding-bottom: 5px;
+    color: var(--primary-color);
+    margin-top: 40px;
+    margin-bottom: 25px;
+    line-height: 1.3em;
 }
 
 h1 {
-    font-size: 1.8em;
+    font-size: 2.5em;
+    border-bottom: 2px solid #527bbd;
+    padding-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
 h2 {
-    font-size: 1.4em;
+    font-size: 1.7em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.4em;
     border-bottom: none;
 }
 
-/* Link styling */
+/* Paragraphs */
+p {
+    line-height: 1.8em;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* Links */
 a {
-    color: #224b8d;
+    color: var(--primary-color);
     text-decoration: none;
-    transition: all 0.3s ease-in-out;
+    border-bottom: 1px dashed transparent;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #1a3b6e;
-    border-bottom: 1px solid #1a3b6e;
+    color: var(--primary-dark);
+    border-bottom: 1px dashed var(--primary-dark);
 }
 
-/* Table styling */
+/* Tables */
 table {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
-td, th {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+th, td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
 }
 
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Image styling */
+/* Image Styling */
 img {
-    border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
 }
 
-/* Footer styling */
-div#footer {
-    font-size: small;
-    border-top: 1px solid #c0c0c0;
-    padding-top: 10px;
-    margin-top: 4.0em;
-    color: #606060;
+img:hover {
+    transform: scale(1.06);
+}
+
+/* Footer */
+#footer {
+    font-size: 0.9em;
+    color: #666;
     text-align: center;
+    margin: 60px 0 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    #tlayout {
+        flex-direction: column;
+        padding: 10px;
+    }
+    #layout-menu {
+        width: 100%;
+        position: relative;
+        top: 0;
+        margin-bottom: 30px;
+    }
 }
