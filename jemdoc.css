@@ -7,11 +7,25 @@
 :root {
     --primary-color: #224b8d;
     --primary-dark: #1a3b6e;
-    --bg-gradient: linear-gradient(135deg, #f5f7fa, #e4ecf7);
-    --menu-bg: rgba(255, 255, 255, 0.85);
+    --bg-gradient: #f9fafc;
+    /* Simplified background for cleaner academic look */
+    --menu-bg: rgba(255, 255, 255, 0.95);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 /* Body Styling */
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    /* Disable window scroll */
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -22,24 +36,38 @@ body {
 
 /* Layout */
 #tlayout {
-    max-width: 1200px;
-    margin: 50px auto;
+    max-width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    margin: 0;
     display: flex;
-    gap: 30px;
-    padding: 0 20px;
+    gap: 0;
+    /* Remove gap, handle via padding/borders */
+    padding: 0;
+}
+
+#tlayout tbody,
+#tlayout tr {
+    display: contents;
 }
 
 /* Navigation Menu Styling */
 #layout-menu {
-    position: sticky;
-    top: 30px;
+    position: relative;
+    /* No longer sticky */
+    width: 280px;
+    min-width: 280px;
+    height: 100%;
+    overflow-y: auto;
+    /* Independent scroll */
     background: var(--menu-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid #ddd;
-    border-radius: 16px;
-    padding: 30px 20px;
-    min-width: 250px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #eaeaea;
+    border-radius: 0;
+    /* Full height panel */
+    padding: 40px 30px;
+    box-shadow: none;
+    /* Clean split look */
+    z-index: 10;
 }
 
 .menu-category {
@@ -53,31 +81,41 @@ body {
 .menu-item a {
     display: block;
     font-weight: 500;
-    color: var(--primary-color);
+    color: #444;
+    /* Darker grey for better contrast, less "link blue" */
     text-decoration: none;
-    padding: 12px 15px;
-    border-radius: 10px;
-    transition: all 0.4s ease;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
 }
 
 .menu-item a:hover {
-    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
-    color: white;
-    transform: translateX(8px);
-    box-shadow: 2px 4px 12px rgba(0,0,0,0.15);
+    background: #f0f4f8;
+    color: var(--primary-color);
+    border-left: 3px solid var(--primary-color);
+    transform: translateX(4px);
+    box-shadow: none;
+    /* Removed shadow for cleaner look */
 }
 
 /* Content Styling */
 #layout-content {
     flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    /* Independent scroll */
     background: #fff;
-    padding: 50px 50px 80px 50px;
-    border-radius: 20px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    padding: 50px 80px 100px 80px;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
 }
 
 /* Titles */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--primary-color);
     margin-top: 40px;
     margin-bottom: 25px;
@@ -88,7 +126,7 @@ h1 {
     font-size: 2.5em;
     border-bottom: 2px solid #527bbd;
     padding-bottom: 15px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -106,7 +144,12 @@ h3 {
 p {
     line-height: 1.8em;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    /* Increased spacing */
+    color: #444;
+    /* Softer black */
+    font-size: 1.05em;
+    /* Slightly larger for readability */
 }
 
 /* Links */
@@ -126,13 +169,15 @@ a:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
-th, td {
-    padding: 14px 16px;
-    border-bottom: 1px solid #eee;
+th,
+td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    /* Softer border */
 }
 
 tr:nth-child(even) {
@@ -142,7 +187,7 @@ tr:nth-child(even) {
 /* Image Styling */
 img {
     border-radius: 14px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s ease;
 }
 
@@ -164,6 +209,7 @@ img:hover {
         flex-direction: column;
         padding: 10px;
     }
+
     #layout-menu {
         width: 100%;
         position: relative;
