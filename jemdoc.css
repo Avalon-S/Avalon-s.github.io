@@ -3,15 +3,38 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto&display=swap');
 
-/* Root Palette */
+/* Root Palette - Light Mode (Default) */
 :root {
     --primary-color: #224b8d;
     --primary-dark: #1a3b6e;
     --bg-gradient: #f9fafc;
-    /* Simplified background for cleaner academic look */
     --menu-bg: rgba(255, 255, 255, 0.95);
+    --content-bg: #fff;
+    --text-color: #333;
+    --text-muted: #444;
+    --border-color: #eaeaea;
+    --hover-bg: #f0f4f8;
     --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
     --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.08);
+    --table-stripe: #f9f9f9;
+    --heading-border: #527bbd;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --primary-color: #6b9fff;
+    --primary-dark: #8ab4ff;
+    --bg-gradient: #1a1a2e;
+    --menu-bg: rgba(26, 26, 46, 0.95);
+    --content-bg: #16213e;
+    --text-color: #e8e8e8;
+    --text-muted: #c0c0c0;
+    --border-color: #2a2a4a;
+    --hover-bg: #252545;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.4);
+    --table-stripe: #1e1e3a;
+    --heading-border: #6b9fff;
 }
 
 * {
@@ -23,7 +46,6 @@ html,
 body {
     height: 100%;
     overflow: hidden;
-    /* Disable window scroll */
 }
 
 body {
@@ -31,18 +53,63 @@ body {
     padding: 0;
     font-family: 'Poppins', 'Roboto', sans-serif;
     background: var(--bg-gradient);
-    color: #333;
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--menu-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+    display: none;
+}
+
+/* Light mode: show moon icon */
+:root .theme-toggle .icon-moon {
+    display: block;
+    color: #224b8d;
+}
+
+/* Dark mode: show sun icon with bright yellow color */
+[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
+    color: #ffd700;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
 }
 
 /* Layout */
 #tlayout {
     max-width: 100%;
     height: 100vh;
-    /* Full viewport height */
     margin: 0;
     display: flex;
     gap: 0;
-    /* Remove gap, handle via padding/borders */
     padding: 0;
 }
 
@@ -54,20 +121,17 @@ body {
 /* Navigation Menu Styling */
 #layout-menu {
     position: relative;
-    /* No longer sticky */
     width: 280px;
     min-width: 280px;
     height: 100%;
     overflow-y: auto;
-    /* Independent scroll */
     background: var(--menu-bg);
-    border-right: 1px solid #eaeaea;
+    border-right: 1px solid var(--border-color);
     border-radius: 0;
-    /* Full height panel */
     padding: 40px 30px;
     box-shadow: none;
-    /* Clean split look */
     z-index: 10;
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .menu-category {
@@ -81,8 +145,7 @@ body {
 .menu-item a {
     display: block;
     font-weight: 500;
-    color: #444;
-    /* Darker grey for better contrast, less "link blue" */
+    color: var(--text-muted);
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 8px;
@@ -91,12 +154,11 @@ body {
 }
 
 .menu-item a:hover {
-    background: #f0f4f8;
+    background: var(--hover-bg);
     color: var(--primary-color);
     border-left: 3px solid var(--primary-color);
     transform: translateX(4px);
     box-shadow: none;
-    /* Removed shadow for cleaner look */
 }
 
 /* Content Styling */
@@ -104,12 +166,12 @@ body {
     flex: 1;
     height: 100%;
     overflow-y: auto;
-    /* Independent scroll */
-    background: #fff;
+    background: var(--content-bg);
     padding: 50px 80px 100px 80px;
     border-radius: 0;
     box-shadow: none;
     border: none;
+    transition: background 0.3s ease;
 }
 
 /* Titles */
@@ -124,14 +186,14 @@ h3 {
 
 h1 {
     font-size: 2.5em;
-    border-bottom: 2px solid #527bbd;
+    border-bottom: 2px solid var(--heading-border);
     padding-bottom: 15px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     font-size: 1.7em;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
 }
 
@@ -145,11 +207,8 @@ p {
     line-height: 1.8em;
     font-weight: 400;
     margin-bottom: 24px;
-    /* Increased spacing */
-    color: #444;
-    /* Softer black */
+    color: var(--text-muted);
     font-size: 1.05em;
-    /* Slightly larger for readability */
 }
 
 /* Links */
@@ -169,19 +228,18 @@ a:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-soft);
     margin-bottom: 20px;
 }
 
 th,
 td {
     padding: 16px 20px;
-    border-bottom: 1px solid #f0f0f0;
-    /* Softer border */
+    border-bottom: 1px solid var(--border-color);
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: var(--table-stripe);
 }
 
 /* Image Styling */
@@ -198,7 +256,7 @@ img:hover {
 /* Footer */
 #footer {
     font-size: 0.9em;
-    color: #666;
+    color: var(--text-muted);
     text-align: center;
     margin: 60px 0 15px;
 }
@@ -215,5 +273,10 @@ img:hover {
         position: relative;
         top: 0;
         margin-bottom: 30px;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
     }
 }
