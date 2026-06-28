@@ -42,6 +42,86 @@
 <h2  id="publications">Publications </h2>
     <ol>
         <li>
+            <p>"PInVerify: An Offline Embodied Benchmark for Active Instance Verification"</p>
+            <p>Poster, FMEA Workshop @ CVPR 2026</p>
+            [<a href="https://arxiv.org/abs/2605.30639">arxiv</a>] [<a href="https://openreview.net/forum?id=7X1skQwLpm">openreview</a>] [<a href="https://github.com/Avalon-S/PInVerify">code</a>]
+            <p><b>Yuhang Jiang</b> (sole author)</p>
+            <details class="pub-extra">
+                <summary>Abstract &amp; figure</summary>
+                <div class="pub-body">
+                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Embodied agents have made strong progress in navigating to target objects, but reaching the goal vicinity does not guarantee that the agent has found the correct instance: subtle attribute differences (e.g., "white floral" vs. "white striped") often require close-range, multi-view inspection. We address this gap with Active Instance Verification (AIV), a task in which an agent actively selects viewpoints around a candidate object to decide whether it matches a fine-grained natural-language description. We formalize AIV as a finite-horizon decision process and introduce PInVerify, an offline embodied benchmark for AIV: 3,000 evaluation episodes across 18 object categories, delivered as multi-view captures with a 6-sector navigation topology that exposes trap views (navigable but uninformative) and unreachable sectors. As reference baselines we build a training-free pipeline and a LoRA-fine-tuned end-to-end agent around open-source multimodal large language models (MLLMs) at on-device scale (&le;8B parameters), with attribute decomposition, a visibility-weighted multi-view tracker, and three next-best-view (NBV) strategies. In our evaluation across Qwen3-VL (4B/8B), SenseNova-SI-1.2-InternVL3-8B, CLIP, and SigLIP2, the best MLLM-based baseline exceeds the best embedding baseline by 4.9 pp; GT-box ablations show a +3.1 pp detection gap; and we do not observe reliable gains from active viewpoint selection within the tested NBV strategies. A LoRA-fine-tuned agent (SFT+GSPO) reaches 85.6%. PInVerify aims to support further work on active, fine-grained semantic verification in embodied AI.</p>
+                    <div class="pub-gallery">
+                        <figure class="pub-figure">
+                            <img src="pub_assets/pinverify_overview.png" alt="Geometric success versus semantic success in embodied instance verification" loading="lazy" />
+                            <figcaption>Geometric success &ne; semantic success: reaching the goal vicinity does not confirm the correct instance, so AIV selects viewpoints to verify fine-grained attributes.</figcaption>
+                        </figure>
+                        <figure class="pub-figure">
+                            <img src="pub_assets/pinverify_capture.jpg" alt="Multi-view capture for one PInVerify episode: top-down camera poses and per-sector observations with masks" loading="lazy" />
+                            <figcaption>Dataset capture: each offline episode is built from top-down camera poses around the goal and per-sector RGB observations with paired segmentation masks.</figcaption>
+                        </figure>
+                        <figure class="pub-figure">
+                            <img src="pub_assets/pinverify_pipeline.png" alt="Two reference agents: a training-free modular pipeline and an end-to-end LoRA-fine-tuned agent" loading="lazy" />
+                            <figcaption>Two reference agents: a training-free modular pipeline (top) with attribute decomposition, per-view verification, multi-view tracking, and next-best-view selection; and an end-to-end LoRA-fine-tuned agent (bottom).</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </details>
+        </li>
+        <li>
+            <p>"Task Structure Reverses Layerwise State Encoding in Sequence Models"</p>
+            <p>Under review</p>
+            [<a href="https://arxiv.org/abs/2606.00926">arxiv</a>]
+            <p><b>Yuhang Jiang</b> (sole author)</p>
+            <details class="pub-extra">
+                <summary>Abstract &amp; figure</summary>
+                <div class="pub-body">
+                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Mechanistic studies of sequence models often treat layerwise state encodings as architectural traits: recurrent models concentrate readable state, attention-based models distribute it. We find that the same architecture instead reverses this profile when the task changes. Across Transformers, Mamba, Mamba-2, LSTMs, and GRUs, Parity is concentrated late in Mamba and the recurrent baselines and built gradually by Transformer; on bounded-depth Dyck-k the pattern flips. The same flip appears in fine-tuned Mamba-130M and Pythia-160M, and the Pythia Dyck bottleneck persists at 410M. Two candidate explanations are conflated in the literature: algebraic structure (commutativity) versus computational structure (prefix update vs. stack). To separate them we add a third task: non-commutative S<sub>3</sub> permutation composition. S<sub>3</sub> groups with Parity, not Dyck, on layerwise probing across all five architectures and on Mamba-specific Conv1D attribution. In this task suite, the grouping tracks computational structure rather than commutativity. Causal interventions show that, in the 4-layer formal models, linearly readable directions are often functionally necessary and can remain important at out-of-distribution lengths on Parity and Dyck. At pretrained scale the picture splits. Fine-tuned Pythia Dyck has a strong middle-layer bottleneck (L6-L7 ablation drops accuracy by roughly 81% at 160M; broader L4-L18 plateau at 410M), far weaker and noisier at the best-probe layer. Pretrained Mamba shows the complementary failure mode: its final layer is highly readable, no single probe direction breaks the task on Parity, Dyck, or S<sub>3</sub>, yet mid-position activation patching at that site recovers about 97-98% of the clean-corrupted logit gap on Parity and Dyck. Probing localizes where state is linearly available, not always where the computation is bottlenecked. Mechanistic signatures are properties of architecture and task together.</p>
+                    <figure class="pub-figure">
+                        <img src="pub_assets/taskstructure.png" alt="Layerwise probe accuracy reversing between Parity and Dyck across Mamba and Transformer" loading="lazy" />
+                        <figcaption>Task-dependent reversal: the same architecture concentrates readable state late on Parity (prefix-update) but flips the pattern on bounded-depth Dyck.</figcaption>
+                    </figure>
+                </div>
+            </details>
+        </li>
+        <li>
+            <p>"Detection vs. Execution: Single-Bucket Probes Miss Half the Mamba-2 State Sink"</p>
+            <p>Under review</p>
+            [<a href="https://arxiv.org/abs/2606.00930">arxiv</a>]
+            <p><b>Yuhang Jiang</b> (sole author)</p>
+            <details class="pub-extra">
+                <summary>Abstract &amp; figure</summary>
+                <div class="pub-body">
+                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Mechanistic interpretability often assumes that probes identifying a representational signature also identify the circuit executing the corresponding computation. We show that this assumption can fail systematically in Mamba-2. Studying the state sink (disproportionate Delta-gate activation on boundary tokens, analogous to the attention sink), we find that single-bucket probes recover only a small execution layer while missing a much larger detection layer with the same representational signature. In Mamba-2, the state sink decomposes into two functional head sets. Single-bucket BOS-specialist heads (about 5% of heads at 2.7B) causally support both BOS-context and newline-target predictions across model scales and corpora. Dual heads (27-35% of heads, recovered by multi-class aggregation of the same probe) show stronger BOS-newline representational similarity but substantially weaker causal effects under ablation. Representational similarity does not imply functional equivalence. This distinction matters for downstream behaviour: ablating BOS-specialist heads collapses RULER NIAH retrieval accuracy from 1.00 to 0.00 at 1024 context length in both Mamba-1 2.8B and Mamba-2 2.7B, while size-matched complements preserve baseline performance. A random channel-bucketing control rules out substrate granularity alone, implicating Mamba-2's head-shared Delta projection. Probe-derived specialty can identify execution circuits; at coarse granularity the same probe also recovers detection circuits, and separating them requires class-conditional ablation rather than class-conditional cosine.</p>
+                    <div class="pub-gallery">
+                        <figure class="pub-figure">
+                            <img src="pub_assets/statesink_selectivity.png" alt="Granularity-conditional selectivity of BOS-specialist ablation across Mamba-1, Mamba-2, and Pythia" loading="lazy" />
+                            <figcaption>Granularity-conditional selectivity: size-matched specialist&minus;complement &Delta;NLL under BOS-specialist ablation for (a) Mamba-1 channels, (b) Mamba-2 heads, and (c) Pythia heads.</figcaption>
+                        </figure>
+                        <figure class="pub-figure">
+                            <img src="pub_assets/statesink_niah.png" alt="Ablating BOS-specialist heads collapses NIAH retrieval accuracy to zero" loading="lazy" />
+                            <figcaption>Downstream effect: ablating the small set of BOS-specialist heads collapses NIAH retrieval from 1.00 to 0.00, while size-matched complement heads leave it intact.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </details>
+        </li>
+        <li>
+            <p>"The Scissors Effect: When Resize-Based Input Diversity Helps or Hurts Transfer Attacks"</p>
+            <p>Under review</p>
+            [<a href="https://arxiv.org/abs/2606.22516">arxiv</a>]
+            <p><b>Yuhang Jiang</b>, Xiaojing Chen</p>
+            <details class="pub-extra">
+                <summary>Abstract &amp; figure</summary>
+                <div class="pub-body">
+                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Input Diversity (DI), which applies random resizing and padding at each attack iteration, is a near-default ingredient of transfer-based adversarial attacks, widely assumed to improve transferability. We show this assumption is regime-dependent and, for robustly trained surrogates, often reversed. Varying only the surrogate, increasing the DI probability raises transfer success for standard surrogates but lowers it for robust ones: the two response curves separate like a pair of scissors, a pattern we call the Scissors Effect. The effect is strong and consistent on ImageNet, where blind DI costs the robust source 10.3% attack success on average across CNN, ViT, Swin, and ConvNeXt targets and across ten attacks spanning 2018-2024; it is smaller on CIFAR-10 unless DI is made aggressive. A controlled robustness-strength sweep that varies only the training budget shows the harm is graded rather than binary, crossing from beneficial to harmful already in the little-robustness regime. We trace it to gradient geometry: a resize/translation decomposition attributes roughly 67% of the harm to resize, and a direct source-target gradient-alignment measurement confirms the same resize operation improves alignment for standard surrogates but degrades it for robust ones. We summarize the regime with Local Gradient Consistency (LGC), a single input-space probe that separates the two surrogate types, and prove a bias-variance crossover theorem isolating where DI helps from where its resize bias dominates. A training-free rule (CG-DI) that disables diversity when LGC is high avoids the loss on robust surrogates while keeping DI's benefit on standard ones, positioning the Scissors Effect as a DI-specific manifestation of the broader robustness-transferability trade-off.</p>
+                    <figure class="pub-figure">
+                        <img src="pub_assets/scissors_effect.png" alt="Input Diversity hurts transfer from robust surrogates but helps standard ones" loading="lazy" />
+                        <figcaption>The Scissors Effect: increasing the Input-Diversity probability lowers transfer success from a robust surrogate (left) but raises it from a standard one (right).</figcaption>
+                    </figure>
+                </div>
+            </details>
+        </li>
+        <li>
             <p>"CL-RAG: A Closed-Loop Multimodal Retrieval-Augmented Generation Architecture for Robust Human-Robot Control Interaction"</p>
             <p>WRC SARA 2025 (oral)</p>
             [<a href="https://ieeexplore.ieee.org/abstract/document/11194943">paper</a>]

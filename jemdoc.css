@@ -261,6 +261,120 @@ img:hover {
     margin: 60px 0 15px;
 }
 
+/* Publication expandable abstract + figure */
+.pub-extra {
+    margin: 8px 0 6px;
+}
+
+.pub-extra > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    list-style: none;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--primary-color);
+    background: var(--hover-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 6px 16px;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.pub-extra > summary::-webkit-details-marker {
+    display: none;
+}
+
+.pub-extra > summary::before {
+    content: "\25B8";
+    display: inline-block;
+    font-size: 0.95em;
+    transition: transform 0.2s ease;
+}
+
+.pub-extra[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.pub-extra > summary:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.pub-body {
+    margin-top: 14px;
+    padding: 20px 24px;
+    background: var(--content-bg);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    animation: pubFade 0.3s ease;
+}
+
+@keyframes pubFade {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.pub-label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 0.72em;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+}
+
+.pub-abstract {
+    font-size: 0.95em;
+    line-height: 1.7em;
+    color: var(--text-muted);
+    margin: 0 0 16px;
+    text-align: justify;
+}
+
+.pub-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.pub-figure {
+    margin: 0;
+    text-align: center;
+}
+
+.pub-figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow-soft);
+}
+
+.pub-figure img:hover {
+    transform: none;
+}
+
+.pub-figure figcaption {
+    font-size: 0.82em;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     #tlayout {
