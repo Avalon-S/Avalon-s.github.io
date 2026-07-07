@@ -44,7 +44,7 @@
         <li>
             <p>"PInVerify: An Offline Embodied Benchmark for Active Instance Verification"</p>
             <p>Poster, FMEA Workshop @ CVPR 2026</p>
-            [<a href="https://arxiv.org/abs/2605.30639">arxiv</a>] [<a href="https://openreview.net/forum?id=7X1skQwLpm">openreview</a>] [<a href="https://github.com/Avalon-S/PInVerify">code</a>]
+            [<a href="https://avalon-s.github.io/PInVerify/">project page</a>] [<a href="https://arxiv.org/abs/2605.30639">arxiv</a>] [<a href="https://openreview.net/forum?id=7X1skQwLpm">openreview</a>] [<a href="https://github.com/Avalon-S/PInVerify">code</a>]
             <p><b>Yuhang Jiang</b> (sole author)</p>
             <details class="pub-extra">
                 <summary>Abstract &amp; figure</summary>
@@ -62,6 +62,28 @@
                         <figure class="pub-figure">
                             <img src="pub_assets/pinverify_pipeline.png" alt="Two reference agents: a training-free modular pipeline and an end-to-end LoRA-fine-tuned agent" loading="lazy" />
                             <figcaption>Two reference agents: a training-free modular pipeline (top) with attribute decomposition, per-view verification, multi-view tracking, and next-best-view selection; and an end-to-end LoRA-fine-tuned agent (bottom).</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </details>
+        </li>
+        <li>
+            <p>"GeoSelect: Spatial-Program Execution for Training-Free Referring Remote Sensing Image Segmentation"</p>
+            <p>Under review</p>
+            [<a href="https://avalon-s.github.io/GeoSelect/">project page</a>] [<a href="https://arxiv.org/abs/2607.03869">arxiv</a>]
+            <p><b>Yuhang Jiang</b>, Guohui Deng*, Miaozhong Xu, Chao Ruan, Jinling Zhao, Linsheng Huang</p>
+            <details class="pub-extra">
+                <summary>Abstract &amp; figures</summary>
+                <div class="pub-body">
+                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Referring remote sensing image segmentation identifies and segments the object named by a natural-language expression in an aerial image. Existing training-free methods resolve the expression through implicit vision-language activations or region-text similarity, which gives weak control over the spatial, comparative, and ordinal relations that dominate aerial referring: they cannot represent constructions such as "the largest ship" or "the second court from the left". We propose GeoSelect, a training-free pipeline that reframes referring as the execution of a typed spatial program. A frozen, text-only language model synthesises the expression into a small domain-specific language, a well-formedness checker accepts the program, and a deterministic executor runs it. The central abstraction is a single <em>scored candidate set</em> type under which every operator composes: continuous geometric fields realise position and proximity as dense pixel-level maps, while discrete set and order operators add the extremum, ordinal, counted-union, and relational constructions that fields alone cannot express. Because execution is explicit, every intermediate program, field, and ranking is inspectable, and a reliability ladder degrades any failing program to the field-only special case, so every expression still returns an answer. GeoSelect attains 58.86&nbsp;mIoU on RRSIS-D test and 55.27&nbsp;mIoU on RISBench test, more than twice the best prior training-free method on RRSIS-D, with no referring supervision and on a single GPU. A controlled comparison with candidates and the segmenter held fixed attributes the gain to explicit execution rather than the backbone; an oracle decomposition attributes the residual gap to detection recall on RRSIS-D and to candidate selection on RISBench, and an image-level exposure audit on RRSIS-D confirms robustness to detector-pretraining leakage. Code and configurations will be released upon acceptance.</p>
+                    <div class="pub-gallery">
+                        <figure class="pub-figure">
+                            <img src="pub_assets/geoselect_teaser.jpg" alt="Implicit region-text matching selects the wrong aircraft while GeoSelect executes a spatial program and picks the correct one" loading="lazy" />
+                            <figcaption>Why explicit execution: for a spatial expression over several same-class objects, implicit region-text matching (left) picks the wrong instance, while GeoSelect synthesises and executes a typed spatial program that scores the candidate set (middle) and returns the instance matching the ground truth (right). Same candidates and segmenter; only the selector differs.</figcaption>
+                        </figure>
+                        <figure class="pub-figure">
+                            <img src="pub_assets/geoselect_pipeline.png" alt="GeoSelect pipeline: synthesise a typed program, then select, filter, argmin, and segment over one scored candidate set" loading="lazy" />
+                            <figcaption>The pipeline executes a typed spatial program over a single scored candidate set: a frozen text-only LLM synthesises the program, the executor evaluates it bottom-up (select candidates, continuous field filter, discrete argmin), and SAM segments the chosen instance. A real per-operator trace is shown above each stage.</figcaption>
                         </figure>
                     </div>
                 </div>
@@ -118,28 +140,6 @@
                         <img src="pub_assets/scissors_effect.png" alt="Input Diversity hurts transfer from robust surrogates but helps standard ones" loading="lazy" />
                         <figcaption>The Scissors Effect: increasing the Input-Diversity probability lowers transfer success from a robust surrogate (left) but raises it from a standard one (right).</figcaption>
                     </figure>
-                </div>
-            </details>
-        </li>
-        <li>
-            <p>"GeoSelect: Spatial-Program Execution for Training-Free Referring Remote Sensing Image Segmentation"</p>
-            <p>Under review</p>
-            [<a href="https://arxiv.org/abs/2607.03869">arxiv</a>]
-            <p><b>Yuhang Jiang</b>, Guohui Deng*, Miaozhong Xu, Chao Ruan, Jinling Zhao, Linsheng Huang</p>
-            <details class="pub-extra">
-                <summary>Abstract &amp; figures</summary>
-                <div class="pub-body">
-                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Referring remote sensing image segmentation identifies and segments the object named by a natural-language expression in an aerial image. Existing training-free methods resolve the expression through implicit vision-language activations or region-text similarity, which gives weak control over the spatial, comparative, and ordinal relations that dominate aerial referring: they cannot represent constructions such as "the largest ship" or "the second court from the left". We propose GeoSelect, a training-free pipeline that reframes referring as the execution of a typed spatial program. A frozen, text-only language model synthesises the expression into a small domain-specific language, a well-formedness checker accepts the program, and a deterministic executor runs it. The central abstraction is a single <em>scored candidate set</em> type under which every operator composes: continuous geometric fields realise position and proximity as dense pixel-level maps, while discrete set and order operators add the extremum, ordinal, counted-union, and relational constructions that fields alone cannot express. Because execution is explicit, every intermediate program, field, and ranking is inspectable, and a reliability ladder degrades any failing program to the field-only special case, so every expression still returns an answer. GeoSelect attains 58.86&nbsp;mIoU on RRSIS-D test and 55.27&nbsp;mIoU on RISBench test, more than twice the best prior training-free method on RRSIS-D, with no referring supervision and on a single GPU. A controlled comparison with candidates and the segmenter held fixed attributes the gain to explicit execution rather than the backbone; an oracle decomposition attributes the residual gap to detection recall on RRSIS-D and to candidate selection on RISBench, and an image-level exposure audit on RRSIS-D confirms robustness to detector-pretraining leakage. Code and configurations will be released upon acceptance.</p>
-                    <div class="pub-gallery">
-                        <figure class="pub-figure">
-                            <img src="pub_assets/geoselect_teaser.jpg" alt="Implicit region-text matching selects the wrong aircraft while GeoSelect executes a spatial program and picks the correct one" loading="lazy" />
-                            <figcaption>Why explicit execution: for a spatial expression over several same-class objects, implicit region-text matching (left) picks the wrong instance, while GeoSelect synthesises and executes a typed spatial program that scores the candidate set (middle) and returns the instance matching the ground truth (right). Same candidates and segmenter; only the selector differs.</figcaption>
-                        </figure>
-                        <figure class="pub-figure">
-                            <img src="pub_assets/geoselect_pipeline.png" alt="GeoSelect pipeline: synthesise a typed program, then select, filter, argmin, and segment over one scored candidate set" loading="lazy" />
-                            <figcaption>The pipeline executes a typed spatial program over a single scored candidate set: a frozen text-only LLM synthesises the program, the executor evaluates it bottom-up (select candidates, continuous field filter, discrete argmin), and SAM segments the chosen instance. A real per-operator trace is shown above each stage.</figcaption>
-                        </figure>
-                    </div>
                 </div>
             </details>
         </li>
