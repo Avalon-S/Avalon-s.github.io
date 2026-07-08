@@ -262,6 +262,39 @@ img:hover {
 }
 
 /* Publication expandable abstract + figure */
+.pub-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 6px 0 24px;
+}
+
+.pub-filter-btn {
+    cursor: pointer;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    font-size: 0.82em;
+    font-weight: 500;
+    color: var(--primary-color);
+    background: var(--hover-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 6px 15px;
+    transition: all 0.2s ease;
+}
+
+.pub-filter-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.pub-filter-btn.active {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-soft);
+}
+
 .pub-extra {
     margin: 8px 0 6px;
 }

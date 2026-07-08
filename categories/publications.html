@@ -40,8 +40,16 @@
 </td>
 <td id="layout-content">
 <h2  id="publications">Publications </h2>
-    <ol>
-        <li>
+    <div class="pub-filter" role="group" aria-label="Filter publications by research area">
+        <button type="button" class="pub-filter-btn active" data-filter="all">All</button>
+        <button type="button" class="pub-filter-btn" data-filter="embodied">Embodied AI</button>
+        <button type="button" class="pub-filter-btn" data-filter="mechinterp">Mechanistic Interpretability</button>
+        <button type="button" class="pub-filter-btn" data-filter="remote">Remote Sensing</button>
+        <button type="button" class="pub-filter-btn" data-filter="adversarial">Adversarial Robustness</button>
+        <button type="button" class="pub-filter-btn" data-filter="others">Others</button>
+    </div>
+    <ol id="pub-list">
+        <li data-area="embodied">
             <p>"PInVerify: An Offline Embodied Benchmark for Active Instance Verification"</p>
             <p>Poster, FMEA Workshop @ CVPR 2026</p>
             [<a href="https://avalon-s.github.io/PInVerify/">project page</a>] [<a href="https://arxiv.org/abs/2605.30639">arxiv</a>] [<a href="https://openreview.net/forum?id=7X1skQwLpm">openreview</a>] [<a href="https://github.com/Avalon-S/PInVerify">code</a>]
@@ -67,9 +75,9 @@
                 </div>
             </details>
         </li>
-        <li>
+        <li data-area="remote">
             <p>"GeoSelect: Spatial-Program Execution for Training-Free Referring Remote Sensing Image Segmentation"</p>
-            <p>Under review</p>
+            <p>IEEE TGRS, under review</p>
             [<a href="https://avalon-s.github.io/GeoSelect/">project page</a>] [<a href="https://arxiv.org/abs/2607.03869">arxiv</a>]
             <p><b>Yuhang Jiang</b>, Guohui Deng*, Miaozhong Xu, Chao Ruan, Jinling Zhao, Linsheng Huang</p>
             <details class="pub-extra">
@@ -89,7 +97,7 @@
                 </div>
             </details>
         </li>
-        <li>
+        <li data-area="mechinterp">
             <p>"Task Structure Reverses Layerwise State Encoding in Sequence Models"</p>
             <p>Under review</p>
             [<a href="https://arxiv.org/abs/2606.00926">arxiv</a>]
@@ -105,7 +113,7 @@
                 </div>
             </details>
         </li>
-        <li>
+        <li data-area="mechinterp">
             <p>"Detection vs. Execution: Single-Bucket Probes Miss Half the Mamba-2 State Sink"</p>
             <p>Under review</p>
             [<a href="https://arxiv.org/abs/2606.00930">arxiv</a>]
@@ -127,7 +135,7 @@
                 </div>
             </details>
         </li>
-        <li>
+        <li data-area="adversarial">
             <p>"The Scissors Effect: When Resize-Based Input Diversity Helps or Hurts Transfer Attacks"</p>
             <p>Under review</p>
             [<a href="https://arxiv.org/abs/2606.22516">arxiv</a>]
@@ -143,19 +151,19 @@
                 </div>
             </details>
         </li>
-        <li>
+        <li data-area="others">
             <p>"CL-RAG: A Closed-Loop Multimodal Retrieval-Augmented Generation Architecture for Robust Human-Robot Control Interaction"</p>
             <p>WRC SARA 2025 (oral)</p>
             [<a href="https://ieeexplore.ieee.org/abstract/document/11194943">paper</a>]
             <p>Bowen Zhang, <b>Yuhang Jiang</b>, Lingxiang Hu, Dun Li, Qianqian Hu*</p>
         </li>
-        <li>
+        <li data-area="others">
             <p>"Improved lightweight identification of agricultural diseases based on MobileNetV3"</p>
             <p>CAIBDA 2022 (oral)</p>
             [<a href="https://ieeexplore.ieee.org/document/10104447">paper</a>] [<a href="https://arxiv.org/abs/2207.11238">arxiv</a>] [<a href="https://github.com/Avalon-S/MobileNetV3-CA">code</a>]
             <p><b>Yuhang Jiang</b>*, Wenping Tong</p>
         </li>
-        <li>
+        <li data-area="others">
             <p>
                 Software Copyright of Intelligent contract software for agricultural insurance compensation. 2022SR1568111. Nov. 2022
             </p>
@@ -167,5 +175,24 @@
 </td>
 </tr>
 </table>
+<script>
+(function () {
+    var buttons = document.querySelectorAll(".pub-filter-btn");
+    var items = document.querySelectorAll("#pub-list > li");
+    function apply(filter) {
+        items.forEach(function (li) {
+            var area = li.getAttribute("data-area");
+            li.style.display = (filter === "all" || area === filter) ? "" : "none";
+        });
+    }
+    buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            buttons.forEach(function (b) { b.classList.remove("active"); });
+            btn.classList.add("active");
+            apply(btn.getAttribute("data-filter"));
+        });
+    });
+})();
+</script>
 </body>
 </html>
