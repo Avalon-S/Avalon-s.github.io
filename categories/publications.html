@@ -49,6 +49,22 @@
         <button type="button" class="pub-filter-btn" data-filter="others">Others</button>
     </div>
     <ol id="pub-list">
+        <li data-area="adversarial">
+            <p>"The Scissors Effect: When Resize-Based Input Diversity Helps or Hurts Transfer Attacks"</p>
+            <p>Transactions on Machine Learning Research (TMLR), 2026</p>
+            [<a href="https://arxiv.org/abs/2606.22516">arxiv</a>] [<a href="https://openreview.net/forum?id=b4pCcgJM0M">openreview</a>] [<a href="https://github.com/Avalon-S/ScissorsEffect">code</a>]
+            <p><b>Yuhang Jiang</b>, Xiaojing Chen</p>
+            <details class="pub-extra">
+                <summary>Abstract &amp; figure</summary>
+                <div class="pub-body">
+                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Input Diversity (DI), a random resize and pad applied at each attack iteration, is a near-default ingredient of transfer-based attacks, widely assumed to improve transferability. We show this assumption is regime-dependent and, for adversarially trained surrogates, often reversed. Holding the attack fixed and varying only the surrogate, raising the DI probability improves transfer from standard surrogates but degrades it from robust ones: the two response curves separate like a pair of scissors, a pattern we call the <em>Scissors Effect</em>. On ImageNet, blind DI costs a robust source 10.3 percentage points of attack success across four architecturally diverse targets; the effect is several times smaller at 32&times;32. Direct measurement supports a bias&ndash;variance account: DI displaces the gradient by a comparable amount on both groups but reduces its variance only where the gradient is noisy, and robust surrogates have little noise left to average away. A gradient-consistency probe, frozen and hashed before the runs, predicts the sign of the effect on seven unseen surrogates, and we report where it fails alongside where it works. The practical consequence holds independently of the mechanism: leaving DI enabled by default understates the attack a robust surrogate can mount, and so overstates the robustness of the model being evaluated.</p>
+                    <figure class="pub-figure">
+                        <img src="pub_assets/scissors_effect_v3.png" alt="Change in transfer attack success rate as the Input-Diversity probability rises, separating standard and robust surrogates" loading="lazy" />
+                        <figcaption>Change in transfer ASR relative to p=0. Raising the Input-Diversity probability improves transfer from standard surrogates but degrades it from adversarially trained ones. <em>Left:</em> ImageNet, four standard targets. <em>Right:</em> CIFAR-10, two standard targets. Bands are 95% image-paired bootstrap intervals.</figcaption>
+                    </figure>
+                </div>
+            </details>
+        </li>
         <li data-area="embodied">
             <p>"PInVerify: An Offline Embodied Benchmark for Active Instance Verification"</p>
             <p>Poster, FMEA Workshop @ CVPR 2026</p>
@@ -83,7 +99,7 @@
             <details class="pub-extra">
                 <summary>Abstract &amp; figures</summary>
                 <div class="pub-body">
-                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Referring remote sensing image segmentation identifies and segments the object named by a natural-language expression in an aerial image. Existing training-free methods resolve the expression through implicit vision-language activations or region-text similarity, which gives weak control over the spatial, comparative, and ordinal relations that dominate aerial referring: they cannot represent constructions such as "the largest ship" or "the second court from the left". We propose GeoSelect, a training-free pipeline that reframes referring as the execution of a typed spatial program. A frozen, text-only language model synthesises the expression into a small domain-specific language, a well-formedness checker accepts the program, and a deterministic executor runs it. The central abstraction is a single <em>scored candidate set</em> type under which every operator composes: continuous geometric fields realise position and proximity as dense pixel-level maps, while discrete set and order operators add the extremum, ordinal, counted-union, and relational constructions that fields alone cannot express. Because execution is explicit, every intermediate program, field, and ranking is inspectable, and a reliability ladder degrades any failing program to the field-only special case, so every expression still returns an answer. GeoSelect attains 58.86&nbsp;mIoU on RRSIS-D test and 55.27&nbsp;mIoU on RISBench test, more than twice the best prior training-free method on RRSIS-D, with no referring supervision and on a single GPU. A controlled comparison with candidates and the segmenter held fixed attributes the gain to explicit execution rather than the backbone; an oracle decomposition attributes the residual gap to detection recall on RRSIS-D and to candidate selection on RISBench, and an image-level exposure audit on RRSIS-D confirms robustness to detector-pretraining leakage. Code and configurations will be released upon acceptance.</p>
+                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Referring remote sensing image segmentation segments the object named by a natural-language expression in an aerial image. Existing training-free methods resolve the expression through implicit vision&ndash;language activations or region&ndash;text similarity, which gives weak control over the spatial, superlative, and ordinal relations that dominate aerial referring, such as <em>the rightmost ship</em> or <em>the second court from the left</em>. We propose GeoSelect, a training-free pipeline that reframes referring as the execution of a typed spatial program. A frozen, text-only language model synthesises the expression into a small domain-specific language, a well-formedness checker accepts the program, and a deterministic executor runs it. The central abstraction is a single <em>scored candidate set</em> type under which every operator composes: continuous geometric fields realise position and proximity, while discrete set and order operators add the extremum, ordinal, top-<em>k</em>, and relational constructions that fields alone cannot express. Execution is explicit, so every intermediate is inspectable, and a reliability ladder degrades any failing program to the field-only special case. GeoSelect achieves 58.86&nbsp;mIoU on RRSIS-D test and 55.27&nbsp;mIoU on RISBench test, more than twice the best prior training-free method on RRSIS-D, with no referring supervision and on a single GPU. Under a fixed detector and segmenter, explicit execution improves over implicit selectors under the same backbone; the best-box-IoU and outcome-partition diagnostics motivate complementary tests of proposal recall and program-path behaviour, with the program path the clearer priority on RISBench, and an exposure audit shows comparable accuracy on the audited unseen subset. Code and configurations will be released upon acceptance.</p>
                     <div class="pub-gallery">
                         <figure class="pub-figure">
                             <img src="pub_assets/geoselect_teaser.jpg" alt="Implicit region-text matching selects the wrong aircraft while GeoSelect executes a spatial program and picks the correct one" loading="lazy" />
@@ -99,7 +115,7 @@
         </li>
         <li data-area="mechinterp">
             <p>"Task Structure Reverses Layerwise State Encoding in Sequence Models"</p>
-            <p>Under review</p>
+            <p>arXiv preprint</p>
             [<a href="https://arxiv.org/abs/2606.00926">arxiv</a>]
             <p><b>Yuhang Jiang</b> (sole author)</p>
             <details class="pub-extra">
@@ -114,40 +130,24 @@
             </details>
         </li>
         <li data-area="mechinterp">
-            <p>"Detection vs. Execution: Single-Bucket Probes Miss Half the Mamba-2 State Sink"</p>
-            <p>Under review</p>
+            <p>"A Circuit, Not The Circuit: Non-Unique Causal Localisation of the Mamba-2 State Sink"</p>
+            <p>arXiv preprint &middot; Recommended for Findings by ARR meta-review</p>
             [<a href="https://arxiv.org/abs/2606.00930">arxiv</a>]
-            <p><b>Yuhang Jiang</b> (sole author)</p>
+            <p><b>Yuhang Jiang</b>, Bowen Zhang</p>
             <details class="pub-extra">
                 <summary>Abstract &amp; figure</summary>
                 <div class="pub-body">
-                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Mechanistic interpretability often assumes that probes identifying a representational signature also identify the circuit executing the corresponding computation. We show that this assumption can fail systematically in Mamba-2. Studying the state sink (disproportionate Delta-gate activation on boundary tokens, analogous to the attention sink), we find that single-bucket probes recover only a small execution layer while missing a much larger detection layer with the same representational signature. In Mamba-2, the state sink decomposes into two functional head sets. Single-bucket BOS-specialist heads (about 5% of heads at 2.7B) causally support both BOS-context and newline-target predictions across model scales and corpora. Dual heads (27-35% of heads, recovered by multi-class aggregation of the same probe) show stronger BOS-newline representational similarity but substantially weaker causal effects under ablation. Representational similarity does not imply functional equivalence. This distinction matters for downstream behaviour: ablating BOS-specialist heads collapses RULER NIAH retrieval accuracy from 1.00 to 0.00 at 1024 context length in both Mamba-1 2.8B and Mamba-2 2.7B, while size-matched complements preserve baseline performance. A random channel-bucketing control rules out substrate granularity alone, implicating Mamba-2's head-shared Delta projection. Probe-derived specialty can identify execution circuits; at coarse granularity the same probe also recovers detection circuits, and separating them requires class-conditional ablation rather than class-conditional cosine.</p>
+                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Mechanistic interpretability routinely reads a probe and labels its top-activating units as <em>the</em> circuit executing the computation. We test the move in Mamba, on the state sink: the selective state-space analogue of the Transformer attention sink, where the Delta-gate fires disproportionately on boundary tokens such as BOS and newline. At Mamba-1 channel granularity the probe's units carry the causal effect. At Mamba-2 head granularity the label-to-locus link breaks in three ways. The causal set is not unique: a near-disjoint set of top-activation heads, sharing almost none of the specialists, matches or exceeds their ablation effect. Representation does not track function: dual heads, a quarter to over a third of all heads, respond alike to BOS and newline yet do not reproduce the specialists' causal profile. And the effect dissociates by intervention surface: perturbing the input-dependent Delta the probe reads moves the loss by at most 0.16 nats, while suppressing the same heads' output moves it by 1.5 to 7.3 nats. The heads still matter behaviourally, dropping needle-retrieval success on a RULER-style probe from 30/30 to 0/30 at 1024 context on both flagship checkpoints. A representational signature in a selective state-space model thus marks a behaviourally important head set without pinning down the circuit: a single probe recovers <em>a</em> circuit, not <em>the</em> circuit.</p>
                     <div class="pub-gallery">
                         <figure class="pub-figure">
-                            <img src="pub_assets/statesink_selectivity.png" alt="Granularity-conditional selectivity of BOS-specialist ablation across Mamba-1, Mamba-2, and Pythia" loading="lazy" />
-                            <figcaption>Granularity-conditional selectivity: size-matched specialist&minus;complement &Delta;NLL under BOS-specialist ablation for (a) Mamba-1 channels, (b) Mamba-2 heads, and (c) Pythia heads.</figcaption>
+                            <img src="pub_assets/statesink_selectivity_v2.png" alt="Size-matched BOS-specialist causal effect across granularities and architectures" loading="lazy" />
+                            <figcaption>Size-matched BOS-specialist causal effect across granularities and architectures under gate-zero ablation: specialist&minus;complement &Delta;NLL for (a) Mamba-1 channels, (b) Mamba-2 heads, and (c) Pythia attention heads. Dark bars wikitext-2, paler bars Pile-10k; labels in nats.</figcaption>
                         </figure>
                         <figure class="pub-figure">
-                            <img src="pub_assets/statesink_niah.png" alt="Ablating BOS-specialist heads collapses NIAH retrieval accuracy to zero" loading="lazy" />
-                            <figcaption>Downstream effect: ablating the small set of BOS-specialist heads collapses NIAH retrieval from 1.00 to 0.00, while size-matched complement heads leave it intact.</figcaption>
+                            <img src="pub_assets/statesink_f1_decomposition.png" alt="Functional decomposition of specialist and dual head sets across three Mamba-2 scales" loading="lazy" />
+                            <figcaption>Functional decomposition across three Mamba-2 scales: specialist minus size-matched random-complement differentials for (a) the BOS-context target and (b) the newline target. Dual heads share the representational signature but not the causal profile.</figcaption>
                         </figure>
                     </div>
-                </div>
-            </details>
-        </li>
-        <li data-area="adversarial">
-            <p>"The Scissors Effect: When Resize-Based Input Diversity Helps or Hurts Transfer Attacks"</p>
-            <p>Under review</p>
-            [<a href="https://arxiv.org/abs/2606.22516">arxiv</a>]
-            <p><b>Yuhang Jiang</b>, Xiaojing Chen</p>
-            <details class="pub-extra">
-                <summary>Abstract &amp; figure</summary>
-                <div class="pub-body">
-                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Input Diversity (DI), which applies random resizing and padding at each attack iteration, is a near-default ingredient of transfer-based adversarial attacks, widely assumed to improve transferability. We show this assumption is regime-dependent and, for robustly trained surrogates, often reversed. Varying only the surrogate, increasing the DI probability raises transfer success for standard surrogates but lowers it for robust ones: the two response curves separate like a pair of scissors, a pattern we call the Scissors Effect. The effect is strong and consistent on ImageNet, where blind DI costs the robust source 10.3% attack success on average across CNN, ViT, Swin, and ConvNeXt targets and across ten attacks spanning 2018-2024; it is smaller on CIFAR-10 unless DI is made aggressive. A controlled robustness-strength sweep that varies only the training budget shows the harm is graded rather than binary, crossing from beneficial to harmful already in the little-robustness regime. We trace it to gradient geometry: a resize/translation decomposition attributes roughly 67% of the harm to resize, and a direct source-target gradient-alignment measurement confirms the same resize operation improves alignment for standard surrogates but degrades it for robust ones. We summarize the regime with Local Gradient Consistency (LGC), a single input-space probe that separates the two surrogate types, and prove a bias-variance crossover theorem isolating where DI helps from where its resize bias dominates. A training-free rule (CG-DI) that disables diversity when LGC is high avoids the loss on robust surrogates while keeping DI's benefit on standard ones, positioning the Scissors Effect as a DI-specific manifestation of the broader robustness-transferability trade-off.</p>
-                    <figure class="pub-figure">
-                        <img src="pub_assets/scissors_effect.png" alt="Input Diversity hurts transfer from robust surrogates but helps standard ones" loading="lazy" />
-                        <figcaption>The Scissors Effect: increasing the Input-Diversity probability lowers transfer success from a robust surrogate (left) but raises it from a standard one (right).</figcaption>
-                    </figure>
                 </div>
             </details>
         </li>
