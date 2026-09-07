@@ -85,6 +85,18 @@
           String(total).padStart(2, '0');
       }
     }
+    // a per-area count on each chip: unmistakably a filter, and useful
+    document.querySelectorAll('.chips button[data-filter]').forEach(function (b) {
+      var f = b.getAttribute('data-filter');
+      var n = f === 'all' ? total : items.filter(function (li) {
+        return li.getAttribute('data-area') === f;
+      }).length;
+      var tag = document.createElement('span');
+      tag.className = 'ct';
+      tag.textContent = String(n).padStart(2, '0');
+      b.appendChild(tag);
+    });
+
     controls.forEach(function (c) {
       c.addEventListener('click', function () {
         apply(c.getAttribute('data-filter'));

@@ -39,7 +39,8 @@
   </div>
 </header>
 
-<aside class="spine">
+<aside class="spine spine-filter">
+  <span class="spinecap mono">Filter</span>
   <nav class="vnav" aria-label="Filter projects by area">
     <button type="button" data-filter="all" class="on"><i></i>All</button>
     <button type="button" data-filter="agents"><i></i>Agents</button>
@@ -77,6 +78,16 @@
         <span class="no">02</span><h2>Selected Projects</h2><span class="ln"></span>
         <span class="ct mono" data-pub-count>14 of 14</span>
       </header>
+
+      <div class="chips" role="group" aria-label="Filter projects by area">
+        <span class="chips-lbl mono">Filter</span>
+        <button type="button" data-filter="all" class="active">All</button>
+        <button type="button" data-filter="agents">LLM &amp; Agents</button>
+        <button type="button" data-filter="cv">Computer Vision</button>
+        <button type="button" data-filter="remote">Remote Sensing</button>
+        <button type="button" data-filter="optimization">Optimization &amp; HPC</button>
+        <button type="button" data-filter="others">Others</button>
+      </div>
 
       <ol class="pubs" id="proj-list">
 
