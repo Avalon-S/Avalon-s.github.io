@@ -1,198 +1,288 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="../jemdoc.css" type="text/css" />
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="bookmark" href="favicon.ico" type="image/x-icon" />
-<title>Publications — Jiang, Yuhang</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Publications by Yuhang Jiang (蒋雨航) — TMLR, IEEE TGRS, CVPR workshops and arXiv preprints on agent memory, mechanistic interpretability, embodied AI and remote sensing." />
+<title>Publications &mdash; Jiang, Yuhang</title>
+<link rel="icon" href="../favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
 <script src="../theme.js"></script>
 </head>
 <body>
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-    <span class="icon-sun">&#9788;</span>
-    <span class="icon-moon">&#9790;</span>
-</button>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
 
-<div class="menu-category">Related Links</div>
-<div class="menu-item"><a href="https://scholar.google.com/citations?user=UUtf_ZoAAAAJ&hl=en">Google Scholar</a></div>
-<div class="menu-item"><a href="https://www.linkedin.com/in/yuhang-jiang-b59833291/">LinkedIn</a></div>
-<div class="menu-item"><a href="https://github.com/Avalon-S">GitHub</a></div>
-<div class="menu-item"><a href="https://www.kaggle.com/yuhang1248">Kaggle</a></div>
+<div class="marks" aria-hidden="true"></div>
 
-<div class="menu-category">Site Navigation</div>
-<div class="menu-item"><a href="../index.html">About Me</a></div>
+<header class="topbar mono">
+  <a class="brand" href="../index.html" aria-label="Home">
+    <span class="mk">YJ</span><span class="who">Jiang, Yuhang</span>
+  </a>
+  <nav class="sitenav" aria-label="Site">
+    <a href="../index.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="publications.html" class="on">Publications</a>
+    <a href="competitions.html">Competitions</a>
+    <a href="awards.html">Awards</a>
+    <a href="work.html">Work</a>
+    <a href="projects.html">Projects</a>
+    <a href="others.html">Other</a>
+    <a href="personal_life.html">Personal</a>
+  </nav>
+  <div class="tools">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light and dark theme">
+      <span class="icon-sun">&#9788;</span><span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+</header>
 
-<div class="menu-item"><a href="education.html">Education</a></div>
-<div class="menu-item"><a href="publications.html">Publications</a></div>
-<div class="menu-item"><a href="competitions.html">Competitions</a></div>
-<div class="menu-item"><a href="awards.html">Awards</a></div>
-<div class="menu-item"><a href="work.html">Work Experience</a></div>
-<div class="menu-item"><a href="projects.html">Projects</a></div>
-<div class="menu-item"><a href="others.html">Other Experiences</a></div>
-<div class="menu-item"><a href="personal_life.html">Personal Life</a></div>
+<!-- ============================== SPINE ============================== -->
+<aside class="spine">
+  <nav class="vnav" aria-label="Filter by research area">
+    <button type="button" data-filter="all" class="on"><i></i>All</button>
+    <button type="button" data-filter="embodied"><i></i>Embodied</button>
+    <button type="button" data-filter="mechinterp"><i></i>Mech interp</button>
+    <button type="button" data-filter="remote"><i></i>Remote</button>
+    <button type="button" data-filter="adversarial"><i></i>Adversarial</button>
+    <button type="button" data-filter="others"><i></i>Others</button>
+  </nav>
+  <span class="loc">Pisa &middot; IT</span>
+</aside>
 
-</td>
-<td id="layout-content">
-<h2  id="publications">Publications </h2>
-    <div class="pub-filter" role="group" aria-label="Filter publications by research area">
-        <button type="button" class="pub-filter-btn active" data-filter="all">All</button>
-        <button type="button" class="pub-filter-btn" data-filter="embodied">Embodied AI</button>
-        <button type="button" class="pub-filter-btn" data-filter="mechinterp">Mechanistic Interpretability</button>
-        <button type="button" class="pub-filter-btn" data-filter="remote">Remote Sensing</button>
-        <button type="button" class="pub-filter-btn" data-filter="adversarial">Adversarial Robustness</button>
-        <button type="button" class="pub-filter-btn" data-filter="others">Others</button>
+<!-- ============================== MENU =============================== -->
+<main class="sheet">
+<div class="inner">
+
+  <section id="top" class="top">
+    <span class="crop tl" style="top:26px;left:0"></span>
+    <span class="crop tr" style="top:26px"></span>
+
+    <div class="g12">
+      <div class="slug mono">01 &mdash; Publications</div>
+      <div class="wordmark">
+        <h1>Publi<em>cations</em></h1>
+        <div class="dim-line">
+          <span class="cap"></span><span class="ln"></span>
+          <span class="lbl mono">Jiang, Yuhang &middot; 2022 to 2026</span>
+          <span class="ln"></span><span class="cap"></span>
+        </div>
+      </div>
+      <div class="vname"><span>论文</span></div>
     </div>
-    <ol id="pub-list">
+  </section>
+
+  <section id="list">
+    <div class="g12">
+      <header class="band">
+        <span class="no">02</span><h2>Selected Works</h2><span class="ln"></span>
+        <span class="ct mono" data-pub-count>08 of 08</span>
+      </header>
+
+      <ol class="pubs" id="pub-list">
+
+        <!-- 01 -->
         <li data-area="adversarial">
-            <p>"The Scissors Effect: When Resize-Based Input Diversity Helps or Hurts Transfer Attacks"</p>
-            <p>Transactions on Machine Learning Research (TMLR), 2026</p>
-            [<a href="https://avalon-s.github.io/ScissorsEffect/">project page</a>] [<a href="https://arxiv.org/abs/2606.22516">arxiv</a>] [<a href="https://openreview.net/forum?id=b4pCcgJM0M">openreview</a>] [<a href="https://github.com/Avalon-S/ScissorsEffect">code</a>]
-            <p><b>Yuhang Jiang</b>, Xiaojing Chen</p>
-            <details class="pub-extra">
-                <summary>Abstract &amp; figure</summary>
-                <div class="pub-body">
-                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Input Diversity (DI), a random resize and pad applied at each attack iteration, is a near-default ingredient of transfer-based attacks, widely assumed to improve transferability. We show this assumption is regime-dependent and, for adversarially trained surrogates, often reversed. Holding the attack fixed and varying only the surrogate, raising the DI probability improves transfer from standard surrogates but degrades it from robust ones: the two response curves separate like a pair of scissors, a pattern we call the <em>Scissors Effect</em>. On ImageNet, blind DI costs a robust source 10.3 percentage points of attack success across four architecturally diverse targets; the effect is several times smaller at 32&times;32. Direct measurement supports a bias&ndash;variance account: DI displaces the gradient by a comparable amount on both groups but reduces its variance only where the gradient is noisy, and robust surrogates have little noise left to average away. A gradient-consistency probe, frozen and hashed before the runs, predicts the sign of the effect on seven unseen surrogates, and we report where it fails alongside where it works. The practical consequence holds independently of the mechanism: leaving DI enabled by default understates the attack a robust surrogate can mount, and so overstates the robustness of the model being evaluated.</p>
-                    <figure class="pub-figure">
-                        <img src="pub_assets/scissors_effect_v3.png" alt="Change in transfer attack success rate as the Input-Diversity probability rises, separating standard and robust surrogates" loading="lazy" />
-                        <figcaption>Change in transfer ASR relative to p=0. Raising the Input-Diversity probability improves transfer from standard surrogates but degrades it from adversarially trained ones. <em>Left:</em> ImageNet, four standard targets. <em>Right:</em> CIFAR-10, two standard targets. Bands are 95% image-paired bootstrap intervals.</figcaption>
-                    </figure>
-                </div>
-            </details>
-        </li>
-        <li data-area="embodied">
-            <p>"PInVerify: An Offline Embodied Benchmark for Active Instance Verification"</p>
-            <p>Poster, FMEA Workshop @ CVPR 2026</p>
-            [<a href="https://avalon-s.github.io/PInVerify/">project page</a>] [<a href="https://arxiv.org/abs/2605.30639">arxiv</a>] [<a href="https://openreview.net/forum?id=7X1skQwLpm">openreview</a>] [<a href="https://github.com/Avalon-S/PInVerify">code</a>]
-            <p><b>Yuhang Jiang</b> (sole author)</p>
-            <details class="pub-extra">
-                <summary>Abstract &amp; figure</summary>
-                <div class="pub-body">
-                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Embodied agents have made strong progress in navigating to target objects, but reaching the goal vicinity does not guarantee that the agent has found the correct instance: subtle attribute differences (e.g., "white floral" vs. "white striped") often require close-range, multi-view inspection. We address this gap with Active Instance Verification (AIV), a task in which an agent actively selects viewpoints around a candidate object to decide whether it matches a fine-grained natural-language description. We formalize AIV as a finite-horizon decision process and introduce PInVerify, an offline embodied benchmark for AIV: 3,000 evaluation episodes across 18 object categories, delivered as multi-view captures with a 6-sector navigation topology that exposes trap views (navigable but uninformative) and unreachable sectors. As reference baselines we build a training-free pipeline and a LoRA-fine-tuned end-to-end agent around open-source multimodal large language models (MLLMs) at on-device scale (&le;8B parameters), with attribute decomposition, a visibility-weighted multi-view tracker, and three next-best-view (NBV) strategies. In our evaluation across Qwen3-VL (4B/8B), SenseNova-SI-1.2-InternVL3-8B, CLIP, and SigLIP2, the best MLLM-based baseline exceeds the best embedding baseline by 4.9 pp; GT-box ablations show a +3.1 pp detection gap; and we do not observe reliable gains from active viewpoint selection within the tested NBV strategies. A LoRA-fine-tuned agent (SFT+GSPO) reaches 85.6%. PInVerify aims to support further work on active, fine-grained semantic verification in embodied AI.</p>
-                    <div class="pub-gallery">
-                        <figure class="pub-figure">
-                            <img src="pub_assets/pinverify_overview.png" alt="Geometric success versus semantic success in embodied instance verification" loading="lazy" />
-                            <figcaption>Geometric success &ne; semantic success: reaching the goal vicinity does not confirm the correct instance, so AIV selects viewpoints to verify fine-grained attributes.</figcaption>
-                        </figure>
-                        <figure class="pub-figure">
-                            <img src="pub_assets/pinverify_capture.jpg" alt="Multi-view capture for one PInVerify episode: top-down camera poses and per-sector observations with masks" loading="lazy" />
-                            <figcaption>Dataset capture: each offline episode is built from top-down camera poses around the goal and per-sector RGB observations with paired segmentation masks.</figcaption>
-                        </figure>
-                        <figure class="pub-figure">
-                            <img src="pub_assets/pinverify_pipeline.png" alt="Two reference agents: a training-free modular pipeline and an end-to-end LoRA-fine-tuned agent" loading="lazy" />
-                            <figcaption>Two reference agents: a training-free modular pipeline (top) with attribute decomposition, per-view verification, multi-view tracking, and next-best-view selection; and an end-to-end LoRA-fine-tuned agent (bottom).</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </details>
-        </li>
-        <li data-area="remote">
-            <p>"GeoSelect: Spatial-Program Execution for Training-Free Referring Remote Sensing Image Segmentation"</p>
-            <p>IEEE TGRS, under review</p>
-            [<a href="https://avalon-s.github.io/GeoSelect/">project page</a>] [<a href="https://arxiv.org/abs/2607.03869">arxiv</a>]
-            <p><b>Yuhang Jiang</b>, Guohui Deng*, Miaozhong Xu, Chao Ruan, Jinling Zhao, Linsheng Huang</p>
-            <details class="pub-extra">
-                <summary>Abstract &amp; figures</summary>
-                <div class="pub-body">
-                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Referring remote sensing image segmentation segments the object named by a natural-language expression in an aerial image. Existing training-free methods resolve the expression through implicit vision&ndash;language activations or region&ndash;text similarity, which gives weak control over the spatial, superlative, and ordinal relations that dominate aerial referring, such as <em>the rightmost ship</em> or <em>the second court from the left</em>. We propose GeoSelect, a training-free pipeline that reframes referring as the execution of a typed spatial program. A frozen, text-only language model synthesises the expression into a small domain-specific language, a well-formedness checker accepts the program, and a deterministic executor runs it. The central abstraction is a single <em>scored candidate set</em> type under which every operator composes: continuous geometric fields realise position and proximity, while discrete set and order operators add the extremum, ordinal, top-<em>k</em>, and relational constructions that fields alone cannot express. Execution is explicit, so every intermediate is inspectable, and a reliability ladder degrades any failing program to the field-only special case. GeoSelect achieves 58.86&nbsp;mIoU on RRSIS-D test and 55.27&nbsp;mIoU on RISBench test, more than twice the best prior training-free method on RRSIS-D, with no referring supervision and on a single GPU. Under a fixed detector and segmenter, explicit execution improves over implicit selectors under the same backbone; the best-box-IoU and outcome-partition diagnostics motivate complementary tests of proposal recall and program-path behaviour, with the program path the clearer priority on RISBench, and an exposure audit shows comparable accuracy on the audited unseen subset. Code and configurations will be released upon acceptance.</p>
-                    <div class="pub-gallery">
-                        <figure class="pub-figure">
-                            <img src="pub_assets/geoselect_teaser.jpg" alt="Implicit region-text matching selects the wrong aircraft while GeoSelect executes a spatial program and picks the correct one" loading="lazy" />
-                            <figcaption>Why explicit execution: for a spatial expression over several same-class objects, implicit region-text matching (left) picks the wrong instance, while GeoSelect synthesises and executes a typed spatial program that scores the candidate set (middle) and returns the instance matching the ground truth (right). Same candidates and segmenter; only the selector differs.</figcaption>
-                        </figure>
-                        <figure class="pub-figure">
-                            <img src="pub_assets/geoselect_pipeline.png" alt="GeoSelect pipeline: synthesise a typed program, then select, filter, argmin, and segment over one scored candidate set" loading="lazy" />
-                            <figcaption>The pipeline executes a typed spatial program over a single scored candidate set: a frozen text-only LLM synthesises the program, the executor evaluates it bottom-up (select candidates, continuous field filter, discrete argmin), and SAM segments the chosen instance. A real per-operator trace is shown above each stage.</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </details>
-        </li>
-        <li data-area="mechinterp">
-            <p>"Task Structure Reverses Layerwise State Encoding in Sequence Models"</p>
-            <p>arXiv preprint</p>
-            [<a href="https://arxiv.org/abs/2606.00926">arxiv</a>]
-            <p><b>Yuhang Jiang</b> (sole author)</p>
-            <details class="pub-extra">
-                <summary>Abstract &amp; figure</summary>
-                <div class="pub-body">
-                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Mechanistic studies of sequence models often treat layerwise state encodings as architectural traits: recurrent models concentrate readable state, attention-based models distribute it. We find that the same architecture instead reverses this profile when the task changes. Across Transformers, Mamba, Mamba-2, LSTMs, and GRUs, Parity is concentrated late in Mamba and the recurrent baselines and built gradually by Transformer; on bounded-depth Dyck-k the pattern flips. The same flip appears in fine-tuned Mamba-130M and Pythia-160M, and the Pythia Dyck bottleneck persists at 410M. Two candidate explanations are conflated in the literature: algebraic structure (commutativity) versus computational structure (prefix update vs. stack). To separate them we add a third task: non-commutative S<sub>3</sub> permutation composition. S<sub>3</sub> groups with Parity, not Dyck, on layerwise probing across all five architectures and on Mamba-specific Conv1D attribution. In this task suite, the grouping tracks computational structure rather than commutativity. Causal interventions show that, in the 4-layer formal models, linearly readable directions are often functionally necessary and can remain important at out-of-distribution lengths on Parity and Dyck. At pretrained scale the picture splits. Fine-tuned Pythia Dyck has a strong middle-layer bottleneck (L6-L7 ablation drops accuracy by roughly 81% at 160M; broader L4-L18 plateau at 410M), far weaker and noisier at the best-probe layer. Pretrained Mamba shows the complementary failure mode: its final layer is highly readable, no single probe direction breaks the task on Parity, Dyck, or S<sub>3</sub>, yet mid-position activation patching at that site recovers about 97-98% of the clean-corrupted logit gap on Parity and Dyck. Probing localizes where state is linearly available, not always where the computation is bottlenecked. Mechanistic signatures are properties of architecture and task together.</p>
-                    <figure class="pub-figure">
-                        <img src="pub_assets/taskstructure.png" alt="Layerwise probe accuracy reversing between Parity and Dyck across Mamba and Transformer" loading="lazy" />
-                        <figcaption>Task-dependent reversal: the same architecture concentrates readable state late on Parity (prefix-update) but flips the pattern on bounded-depth Dyck.</figcaption>
-                    </figure>
-                </div>
-            </details>
-        </li>
-        <li data-area="mechinterp">
-            <p>"A Circuit, Not The Circuit: Non-Unique Causal Localisation of the Mamba-2 State Sink"</p>
-            <p>arXiv preprint &middot; Recommended for Findings by ARR meta-review</p>
-            [<a href="https://arxiv.org/abs/2606.00930">arxiv</a>]
-            <p><b>Yuhang Jiang</b>, Bowen Zhang</p>
-            <details class="pub-extra">
-                <summary>Abstract &amp; figure</summary>
-                <div class="pub-body">
-                    <p class="pub-abstract"><span class="pub-label">Abstract</span>Mechanistic interpretability routinely reads a probe and labels its top-activating units as <em>the</em> circuit executing the computation. We test the move in Mamba, on the state sink: the selective state-space analogue of the Transformer attention sink, where the Delta-gate fires disproportionately on boundary tokens such as BOS and newline. At Mamba-1 channel granularity the probe's units carry the causal effect. At Mamba-2 head granularity the label-to-locus link breaks in three ways. The causal set is not unique: a near-disjoint set of top-activation heads, sharing almost none of the specialists, matches or exceeds their ablation effect. Representation does not track function: dual heads, a quarter to over a third of all heads, respond alike to BOS and newline yet do not reproduce the specialists' causal profile. And the effect dissociates by intervention surface: perturbing the input-dependent Delta the probe reads moves the loss by at most 0.16 nats, while suppressing the same heads' output moves it by 1.5 to 7.3 nats. The heads still matter behaviourally, dropping needle-retrieval success on a RULER-style probe from 30/30 to 0/30 at 1024 context on both flagship checkpoints. A representational signature in a selective state-space model thus marks a behaviourally important head set without pinning down the circuit: a single probe recovers <em>a</em> circuit, not <em>the</em> circuit.</p>
-                    <div class="pub-gallery">
-                        <figure class="pub-figure">
-                            <img src="pub_assets/statesink_selectivity_v2.png" alt="Size-matched BOS-specialist causal effect across granularities and architectures" loading="lazy" />
-                            <figcaption>Size-matched BOS-specialist causal effect across granularities and architectures under gate-zero ablation: specialist&minus;complement &Delta;NLL for (a) Mamba-1 channels, (b) Mamba-2 heads, and (c) Pythia attention heads. Dark bars wikitext-2, paler bars Pile-10k; labels in nats.</figcaption>
-                        </figure>
-                        <figure class="pub-figure">
-                            <img src="pub_assets/statesink_f1_decomposition.png" alt="Functional decomposition of specialist and dual head sets across three Mamba-2 scales" loading="lazy" />
-                            <figcaption>Functional decomposition across three Mamba-2 scales: specialist minus size-matched random-complement differentials for (a) the BOS-context target and (b) the newline target. Dual heads share the representational signature but not the causal profile.</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </details>
-        </li>
-        <li data-area="others">
-            <p>"CL-RAG: A Closed-Loop Multimodal Retrieval-Augmented Generation Architecture for Robust Human-Robot Control Interaction"</p>
-            <p>WRC SARA 2025 (oral)</p>
-            [<a href="https://ieeexplore.ieee.org/abstract/document/11194943">paper</a>]
-            <p>Bowen Zhang, <b>Yuhang Jiang</b>, Lingxiang Hu, Dun Li, Qianqian Hu*</p>
-        </li>
-        <li data-area="others">
-            <p>"Improved lightweight identification of agricultural diseases based on MobileNetV3"</p>
-            <p>CAIBDA 2022 (oral)</p>
-            [<a href="https://ieeexplore.ieee.org/document/10104447">paper</a>] [<a href="https://arxiv.org/abs/2207.11238">arxiv</a>] [<a href="https://github.com/Avalon-S/MobileNetV3-CA">code</a>]
-            <p><b>Yuhang Jiang</b>*, Wenping Tong</p>
-        </li>
-        <li data-area="others">
-            <p>
-                Software Copyright of Intelligent contract software for agricultural insurance compensation. 2022SR1568111. Nov. 2022
+          <div class="no">01</div>
+          <div>
+            <h3>The Scissors Effect: When Resize-Based Input Diversity Helps or Hurts Transfer Attacks</h3>
+            <p class="who"><b>Yuhang Jiang</b>, Xiaojing Chen</p>
+            <p class="lk mono">
+              <a href="https://avalon-s.github.io/ScissorsEffect/">Project page</a>
+              <a href="https://arxiv.org/abs/2606.22516">arXiv</a>
+              <a href="https://openreview.net/forum?id=b4pCcgJM0M">OpenReview</a>
+              <a href="https://github.com/Avalon-S/ScissorsEffect">Code</a>
             </p>
+            <details class="more">
+              <summary>Abstract &amp; figure</summary>
+              <div class="abs">
+                <p><span class="lbl">Abstract</span>Input Diversity (DI), a random resize and pad applied at each attack iteration, is a near-default ingredient of transfer-based attacks, widely assumed to improve transferability. We show this assumption is regime-dependent and, for adversarially trained surrogates, often reversed. Holding the attack fixed and varying only the surrogate, raising the DI probability improves transfer from standard surrogates but degrades it from robust ones: the two response curves separate like a pair of scissors, a pattern we call the <em>Scissors Effect</em>. On ImageNet, blind DI costs a robust source 10.3 percentage points of attack success across four architecturally diverse targets; the effect is several times smaller at 32&times;32. Direct measurement supports a bias&ndash;variance account: DI displaces the gradient by a comparable amount on both groups but reduces its variance only where the gradient is noisy, and robust surrogates have little noise left to average away. A gradient-consistency probe, frozen and hashed before the runs, predicts the sign of the effect on seven unseen surrogates, and we report where it fails alongside where it works. The practical consequence holds independently of the mechanism: leaving DI enabled by default understates the attack a robust surrogate can mount, and so overstates the robustness of the model being evaluated.</p>
+                <figure>
+                  <img src="pub_assets/scissors_effect_v3.png" alt="Change in transfer attack success rate as the Input-Diversity probability rises, separating standard and robust surrogates" loading="lazy" />
+                  <figcaption><span class="fno">Fig. 01</span>Change in transfer ASR relative to p=0. Raising the Input-Diversity probability improves transfer from standard surrogates but degrades it from adversarially trained ones. <em>Left:</em> ImageNet, four standard targets. <em>Right:</em> CIFAR-10, two standard targets. Bands are 95% image-paired bootstrap intervals.</figcaption>
+                </figure>
+              </div>
+            </details>
+          </div>
+          <div class="at mono"><span class="v">TMLR</span>2026<br/>Accepted as is</div>
         </li>
-    </ol>
-    <p><b>Note</b>: * indicates the corresponding author.</p>
-  
-    
-</td>
-</tr>
-</table>
-<script>
-(function () {
-    var buttons = document.querySelectorAll(".pub-filter-btn");
-    var items = document.querySelectorAll("#pub-list > li");
-    function apply(filter) {
-        items.forEach(function (li) {
-            var area = li.getAttribute("data-area");
-            li.style.display = (filter === "all" || area === filter) ? "" : "none";
-        });
-    }
-    buttons.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-            buttons.forEach(function (b) { b.classList.remove("active"); });
-            btn.classList.add("active");
-            apply(btn.getAttribute("data-filter"));
-        });
-    });
-})();
-</script>
+
+        <!-- 02 -->
+        <li data-area="embodied">
+          <div class="no">02</div>
+          <div>
+            <h3>PInVerify: An Offline Embodied Benchmark for Active Instance Verification</h3>
+            <p class="who"><b>Yuhang Jiang</b> (sole author)</p>
+            <p class="lk mono">
+              <a href="https://avalon-s.github.io/PInVerify/">Project page</a>
+              <a href="https://arxiv.org/abs/2605.30639">arXiv</a>
+              <a href="https://openreview.net/forum?id=7X1skQwLpm">OpenReview</a>
+              <a href="https://github.com/Avalon-S/PInVerify">Code</a>
+            </p>
+            <details class="more">
+              <summary>Abstract &amp; figures</summary>
+              <div class="abs">
+                <p><span class="lbl">Abstract</span>Embodied agents have made strong progress in navigating to target objects, but reaching the goal vicinity does not guarantee that the agent has found the correct instance: subtle attribute differences (e.g., &ldquo;white floral&rdquo; vs. &ldquo;white striped&rdquo;) often require close-range, multi-view inspection. We address this gap with Active Instance Verification (AIV), a task in which an agent actively selects viewpoints around a candidate object to decide whether it matches a fine-grained natural-language description. We formalize AIV as a finite-horizon decision process and introduce PInVerify, an offline embodied benchmark for AIV: 3,000 evaluation episodes across 18 object categories, delivered as multi-view captures with a 6-sector navigation topology that exposes trap views (navigable but uninformative) and unreachable sectors. As reference baselines we build a training-free pipeline and a LoRA-fine-tuned end-to-end agent around open-source multimodal large language models (MLLMs) at on-device scale (&le;8B parameters), with attribute decomposition, a visibility-weighted multi-view tracker, and three next-best-view (NBV) strategies. In our evaluation across Qwen3-VL (4B/8B), SenseNova-SI-1.2-InternVL3-8B, CLIP, and SigLIP2, the best MLLM-based baseline exceeds the best embedding baseline by 4.9 pp; GT-box ablations show a +3.1 pp detection gap; and we do not observe reliable gains from active viewpoint selection within the tested NBV strategies. A LoRA-fine-tuned agent (SFT+GSPO) reaches 85.6%. PInVerify aims to support further work on active, fine-grained semantic verification in embodied AI.</p>
+                <div class="gallery">
+                  <figure>
+                    <img src="pub_assets/pinverify_overview.png" alt="Geometric success versus semantic success in embodied instance verification" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 01</span>Geometric success &ne; semantic success: reaching the goal vicinity does not confirm the correct instance, so AIV selects viewpoints to verify fine-grained attributes.</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="pub_assets/pinverify_capture.jpg" alt="Multi-view capture for one PInVerify episode: top-down camera poses and per-sector observations with masks" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 02</span>Dataset capture: each offline episode is built from top-down camera poses around the goal and per-sector RGB observations with paired segmentation masks.</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="pub_assets/pinverify_pipeline.png" alt="Two reference agents: a training-free modular pipeline and an end-to-end LoRA-fine-tuned agent" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 03</span>Two reference agents: a training-free modular pipeline (top) with attribute decomposition, per-view verification, multi-view tracking, and next-best-view selection; and an end-to-end LoRA-fine-tuned agent (bottom).</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="at mono"><span class="v">CVPR 2026</span>FMEA Workshop<br/>Poster</div>
+        </li>
+
+        <!-- 03 -->
+        <li data-area="remote">
+          <div class="no">03</div>
+          <div>
+            <h3>GeoSelect: Spatial-Program Execution for Training-Free Referring Remote Sensing Image Segmentation</h3>
+            <p class="who"><b>Yuhang Jiang</b>, Guohui Deng*, Miaozhong Xu, Chao Ruan, Jinling Zhao, Linsheng Huang</p>
+            <p class="lk mono">
+              <a href="https://avalon-s.github.io/GeoSelect/">Project page</a>
+              <a href="https://arxiv.org/abs/2607.03869">arXiv</a>
+            </p>
+            <details class="more">
+              <summary>Abstract &amp; figures</summary>
+              <div class="abs">
+                <p><span class="lbl">Abstract</span>Referring remote sensing image segmentation segments the object named by a natural-language expression in an aerial image. Existing training-free methods resolve the expression through implicit vision&ndash;language activations or region&ndash;text similarity, which gives weak control over the spatial, superlative, and ordinal relations that dominate aerial referring, such as <em>the rightmost ship</em> or <em>the second court from the left</em>. We propose GeoSelect, a training-free pipeline that reframes referring as the execution of a typed spatial program. A frozen, text-only language model synthesises the expression into a small domain-specific language, a well-formedness checker accepts the program, and a deterministic executor runs it. The central abstraction is a single <em>scored candidate set</em> type under which every operator composes: continuous geometric fields realise position and proximity, while discrete set and order operators add the extremum, ordinal, top-<em>k</em>, and relational constructions that fields alone cannot express. Execution is explicit, so every intermediate is inspectable, and a reliability ladder degrades any failing program to the field-only special case. GeoSelect achieves 58.86&nbsp;mIoU on RRSIS-D test and 55.27&nbsp;mIoU on RISBench test, more than twice the best prior training-free method on RRSIS-D, with no referring supervision and on a single GPU. Under a fixed detector and segmenter, explicit execution improves over implicit selectors under the same backbone; the best-box-IoU and outcome-partition diagnostics motivate complementary tests of proposal recall and program-path behaviour, with the program path the clearer priority on RISBench, and an exposure audit shows comparable accuracy on the audited unseen subset. Code and configurations will be released upon acceptance.</p>
+                <div class="gallery">
+                  <figure>
+                    <img src="pub_assets/geoselect_teaser.jpg" alt="Implicit region-text matching selects the wrong aircraft while GeoSelect executes a spatial program and picks the correct one" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 01</span>Why explicit execution: for a spatial expression over several same-class objects, implicit region-text matching (left) picks the wrong instance, while GeoSelect synthesises and executes a typed spatial program that scores the candidate set (middle) and returns the instance matching the ground truth (right). Same candidates and segmenter; only the selector differs.</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="pub_assets/geoselect_pipeline.png" alt="GeoSelect pipeline: synthesise a typed program, then select, filter, argmin, and segment over one scored candidate set" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 02</span>The pipeline executes a typed spatial program over a single scored candidate set: a frozen text-only LLM synthesises the program, the executor evaluates it bottom-up (select candidates, continuous field filter, discrete argmin), and SAM segments the chosen instance. A real per-operator trace is shown above each stage.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="at mono"><span class="v">IEEE TGRS</span>Under review</div>
+        </li>
+
+        <!-- 04 -->
+        <li data-area="mechinterp">
+          <div class="no">04</div>
+          <div>
+            <h3>Task Structure Reverses Layerwise State Encoding in Sequence Models</h3>
+            <p class="who"><b>Yuhang Jiang</b> (sole author)</p>
+            <p class="lk mono">
+              <a href="https://arxiv.org/abs/2606.00926">arXiv</a>
+            </p>
+            <details class="more">
+              <summary>Abstract &amp; figure</summary>
+              <div class="abs">
+                <p><span class="lbl">Abstract</span>Mechanistic studies of sequence models often treat layerwise state encodings as architectural traits: recurrent models concentrate readable state, attention-based models distribute it. We find that the same architecture instead reverses this profile when the task changes. Across Transformers, Mamba, Mamba-2, LSTMs, and GRUs, Parity is concentrated late in Mamba and the recurrent baselines and built gradually by Transformer; on bounded-depth Dyck-k the pattern flips. The same flip appears in fine-tuned Mamba-130M and Pythia-160M, and the Pythia Dyck bottleneck persists at 410M. Two candidate explanations are conflated in the literature: algebraic structure (commutativity) versus computational structure (prefix update vs. stack). To separate them we add a third task: non-commutative S<sub>3</sub> permutation composition. S<sub>3</sub> groups with Parity, not Dyck, on layerwise probing across all five architectures and on Mamba-specific Conv1D attribution. In this task suite, the grouping tracks computational structure rather than commutativity. Causal interventions show that, in the 4-layer formal models, linearly readable directions are often functionally necessary and can remain important at out-of-distribution lengths on Parity and Dyck. At pretrained scale the picture splits. Fine-tuned Pythia Dyck has a strong middle-layer bottleneck (L6-L7 ablation drops accuracy by roughly 81% at 160M; broader L4-L18 plateau at 410M), far weaker and noisier at the best-probe layer. Pretrained Mamba shows the complementary failure mode: its final layer is highly readable, no single probe direction breaks the task on Parity, Dyck, or S<sub>3</sub>, yet mid-position activation patching at that site recovers about 97-98% of the clean-corrupted logit gap on Parity and Dyck. Probing localizes where state is linearly available, not always where the computation is bottlenecked. Mechanistic signatures are properties of architecture and task together.</p>
+                <figure>
+                  <img src="pub_assets/taskstructure.png" alt="Layerwise probe accuracy reversing between Parity and Dyck across Mamba and Transformer" loading="lazy" />
+                  <figcaption><span class="fno">Fig. 01</span>Task-dependent reversal: the same architecture concentrates readable state late on Parity (prefix-update) but flips the pattern on bounded-depth Dyck.</figcaption>
+                </figure>
+              </div>
+            </details>
+          </div>
+          <div class="at mono"><span class="v">Preprint</span>arXiv</div>
+        </li>
+
+        <!-- 05 -->
+        <li data-area="mechinterp">
+          <div class="no">05</div>
+          <div>
+            <h3>A Circuit, Not The Circuit: Non-Unique Causal Localisation of the Mamba-2 State Sink</h3>
+            <p class="who"><b>Yuhang Jiang</b>, Bowen Zhang</p>
+            <p class="lk mono">
+              <a href="https://arxiv.org/abs/2606.00930">arXiv</a>
+            </p>
+            <details class="more">
+              <summary>Abstract &amp; figures</summary>
+              <div class="abs">
+                <p><span class="lbl">Abstract</span>Mechanistic interpretability routinely reads a probe and labels its top-activating units as <em>the</em> circuit executing the computation. We test the move in Mamba, on the state sink: the selective state-space analogue of the Transformer attention sink, where the Delta-gate fires disproportionately on boundary tokens such as BOS and newline. At Mamba-1 channel granularity the probe&rsquo;s units carry the causal effect. At Mamba-2 head granularity the label-to-locus link breaks in three ways. The causal set is not unique: a near-disjoint set of top-activation heads, sharing almost none of the specialists, matches or exceeds their ablation effect. Representation does not track function: dual heads, a quarter to over a third of all heads, respond alike to BOS and newline yet do not reproduce the specialists&rsquo; causal profile. And the effect dissociates by intervention surface: perturbing the input-dependent Delta the probe reads moves the loss by at most 0.16 nats, while suppressing the same heads&rsquo; output moves it by 1.5 to 7.3 nats. The heads still matter behaviourally, dropping needle-retrieval success on a RULER-style probe from 30/30 to 0/30 at 1024 context on both flagship checkpoints. A representational signature in a selective state-space model thus marks a behaviourally important head set without pinning down the circuit: a single probe recovers <em>a</em> circuit, not <em>the</em> circuit.</p>
+                <div class="gallery">
+                  <figure>
+                    <img src="pub_assets/statesink_selectivity_v2.png" alt="Size-matched BOS-specialist causal effect across granularities and architectures" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 01</span>Size-matched BOS-specialist causal effect across granularities and architectures under gate-zero ablation: specialist&minus;complement &Delta;NLL for (a) Mamba-1 channels, (b) Mamba-2 heads, and (c) Pythia attention heads. Dark bars wikitext-2, paler bars Pile-10k; labels in nats.</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="pub_assets/statesink_f1_decomposition.png" alt="Functional decomposition of specialist and dual head sets across three Mamba-2 scales" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 02</span>Functional decomposition across three Mamba-2 scales: specialist minus size-matched random-complement differentials for (a) the BOS-context target and (b) the newline target. Dual heads share the representational signature but not the causal profile.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="at mono"><span class="v">Preprint</span>arXiv &middot; Recommended<br/>for Findings by ARR</div>
+        </li>
+
+        <!-- 06 -->
+        <li data-area="others">
+          <div class="no">06</div>
+          <div>
+            <h3>CL-RAG: A Closed-Loop Multimodal Retrieval-Augmented Generation Architecture for Robust Human-Robot Control Interaction</h3>
+            <p class="who">Bowen Zhang, <b>Yuhang Jiang</b>, Lingxiang Hu, Dun Li, Qianqian Hu*</p>
+            <p class="lk mono">
+              <a href="https://ieeexplore.ieee.org/abstract/document/11194943">Paper</a>
+            </p>
+          </div>
+          <div class="at mono"><span class="v">WRC SARA 2025</span>Oral</div>
+        </li>
+
+        <!-- 07 -->
+        <li data-area="others">
+          <div class="no">07</div>
+          <div>
+            <h3>Improved lightweight identification of agricultural diseases based on MobileNetV3</h3>
+            <p class="who"><b>Yuhang Jiang</b>*, Wenping Tong</p>
+            <p class="lk mono">
+              <a href="https://ieeexplore.ieee.org/document/10104447">Paper</a>
+              <a href="https://arxiv.org/abs/2207.11238">arXiv</a>
+              <a href="https://github.com/Avalon-S/MobileNetV3-CA">Code</a>
+            </p>
+          </div>
+          <div class="at mono"><span class="v">CAIBDA 2022</span>Oral</div>
+        </li>
+
+        <!-- 08 -->
+        <li data-area="others">
+          <div class="no">08</div>
+          <div>
+            <h3>Intelligent contract software for agricultural insurance compensation</h3>
+            <p class="who">Software copyright &mdash; registration 2022SR1568111</p>
+          </div>
+          <div class="at mono"><span class="v">Copyright</span>Nov 2022</div>
+        </li>
+
+      </ol>
+
+      <p class="note"><b>Note</b> &mdash; * indicates the corresponding author.</p>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="g12 mono">
+      <div class="a">Jiang, Yuhang &mdash; 蒋雨航<br/>Research Intern, Huawei Pisa Research Center</div>
+      <div class="b">Agent memory &middot; AI agents &middot; Mech interp<br/>Embodied AI &middot; VLM &middot; Remote sensing</div>
+      <div class="c">&copy; 2026<br/><b>Sheet 03 / 09</b></div>
+    </div>
+  </footer>
+
+</div>
+</main>
+
+<script src="../assets/site.js"></script>
 </body>
 </html>
