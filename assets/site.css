@@ -232,6 +232,36 @@ section{padding-top:clamp(56px,6.5vw,100px); scroll-margin-top:24px}
 .band .ct{flex:none; color:var(--dim)}
 
 /* ==================================================================
+   SELECTED WORK — three cards, each one finding
+   ================================================================== */
+.cards{grid-column:1 / -1; display:grid; grid-template-columns:repeat(12,1fr);
+  border-top:1px solid var(--line)}
+.card{grid-column:span 4; padding:22px 22px 26px; border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line); display:flex; flex-direction:column}
+.card:last-child{border-right:none}
+/* one fixed frame for every card so the titles line up whatever the
+   source figure's aspect ratio is; contain, never crop a scientific figure */
+.card .shot{display:block; border:1px solid var(--line); margin-bottom:18px;
+  background:#fff; overflow:hidden; aspect-ratio:2.7 / 1}
+.card .shot img{width:100%; height:100%; object-fit:contain; display:block;
+  transition:transform .35s ease}
+.card .shot:hover img{transform:scale(1.03)}
+.card .tag{margin:0 0 10px; color:var(--dim); display:flex; flex-wrap:wrap; gap:10px}
+.card .tag .v{color:var(--accent-t)}
+.card h3{margin:0 0 11px; font-size:clamp(19px,1.8vw,25px); line-height:1.16;
+  letter-spacing:-.026em; font-weight:600}
+.card .finding{margin:0 0 18px; font-size:15.5px; line-height:1.6; color:var(--dim); flex:1}
+.card .finding b{color:var(--ink); font-weight:600}
+.card .finding em{font-style:italic; color:var(--accent-t)}
+.card .lk{margin:0}
+.card .lk a{margin-right:15px; color:var(--dim); border-bottom:1px solid var(--line);
+  padding-bottom:2px}
+.card .lk a:hover{color:var(--accent-t); border-bottom-color:var(--accent-t)}
+.more-link{grid-column:1 / -1; padding-top:20px; text-align:right}
+.more-link a{color:var(--accent2); border-bottom:1px solid var(--line); padding-bottom:2px}
+.more-link a:hover{color:var(--accent-t); border-bottom-color:var(--accent-t)}
+
+/* ==================================================================
    NEWS — ticked timeline
    ================================================================== */
 .tl{grid-column:1 / -1; border-left:1px solid var(--line); margin-left:6px}
@@ -278,6 +308,10 @@ section{padding-top:clamp(56px,6.5vw,100px); scroll-margin-top:24px}
   color:transparent; -webkit-text-stroke:1px var(--accent2)}
 .pubs h3{margin:0 0 10px; font-size:clamp(18px,1.65vw,24px); line-height:1.24;
   letter-spacing:-.023em; font-weight:600; max-width:46ch}
+.pubs .tldr{margin:0 0 12px; font-size:15.5px; line-height:1.55; color:var(--ink);
+  max-width:56ch; padding-left:13px; border-left:2px solid var(--accent)}
+.pubs .tldr b{font-weight:600}
+.pubs .tldr em{font-style:italic; color:var(--accent-t)}
 .pubs .who{margin:0 0 12px; font-size:15px; color:var(--dim); line-height:1.5}
 .pubs .who b{color:var(--ink); font-weight:600}
 .pubs .lk{margin:0}
@@ -393,6 +427,9 @@ footer .c b{color:var(--accent); font-weight:500}
   .prose{grid-column:1 / span 7}
   .notes{grid-column:9 / span 4}
   .spec .u{grid-column:span 6}
+  .card{grid-column:span 6}
+  .card:nth-child(2n){border-right:none}
+  .card:last-child{border-right:1px solid var(--line)}
   .spec .u:nth-child(3n){border-right:1px solid var(--line)}
   .spec .u:nth-child(2n){border-right:none}
   .spec .u:nth-child(-n+4){border-bottom:1px solid var(--line)}
@@ -446,6 +483,7 @@ footer .c b{color:var(--accent); font-weight:500}
   .spec .u{grid-column:1 / -1; border-right:none !important;
     border-bottom:1px solid var(--line) !important; min-height:0}
   .pubs > li{grid-template-columns:1fr; gap:12px}
+  .card{grid-column:1 / -1; border-right:none !important}
   .pubs .at{text-align:left}
   footer .a,footer .b,footer .c{grid-column:1 / -1; text-align:left; padding-bottom:14px}
 }

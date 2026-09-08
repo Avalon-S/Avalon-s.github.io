@@ -30,7 +30,6 @@
     <a href="categories/work.html">Work</a>
     <a href="categories/projects.html">Projects</a>
     <a href="categories/others.html">Other</a>
-    <a href="categories/personal_life.html">Personal</a>
   </nav>
   <div class="tools">
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light and dark theme">
@@ -43,8 +42,9 @@
 <aside class="spine">
   <nav class="vnav" aria-label="Sections">
     <a href="#about" class="on"><i></i>01 About</a>
-    <a href="#news"><i></i>02 News</a>
-    <a href="#research"><i></i>03 Research</a>
+    <a href="#work"><i></i>02 Work</a>
+    <a href="#news"><i></i>03 News</a>
+    <a href="#research"><i></i>04 Research</a>
   </nav>
   <span class="loc">Pisa &middot; IT</span>
 </aside>
@@ -137,11 +137,77 @@
     </div>
   </section>
 
-  <!-- ---------------------------- 02 NEWS ----------------------------- -->
+  <!-- ------------------------ 02 SELECTED WORK ------------------------ -->
+  <section id="work">
+    <div class="g12">
+      <header class="band">
+        <span class="no">02</span><h2>Selected Work</h2><span class="ln"></span>
+        <span class="ct mono">03 of 08</span>
+      </header>
+      <div class="cards">
+
+        <article class="card">
+          <a class="shot" href="categories/publications.html">
+            <img src="assets/thumbs/scissors.jpg" width="760" height="261" loading="lazy"
+                 alt="Transfer attack success rate rising for standard surrogates and falling for robust ones as Input-Diversity probability increases" />
+          </a>
+          <p class="tag mono"><span class="v">TMLR 2026</span>Accepted as is</p>
+          <h3>The Scissors Effect</h3>
+          <p class="finding">Input Diversity is a near-default ingredient of transfer attacks &mdash;
+            and on adversarially trained surrogates it <em>reverses sign</em>, costing a robust
+            source <b>10.3 points</b> of attack success. Leaving it on by default overstates the
+            robustness of the model being evaluated.</p>
+          <p class="lk mono">
+            <a href="https://avalon-s.github.io/ScissorsEffect/">Project</a>
+            <a href="https://arxiv.org/abs/2606.22516">arXiv</a>
+            <a href="https://github.com/Avalon-S/ScissorsEffect">Code</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <a class="shot" href="categories/publications.html">
+            <img src="assets/thumbs/pinverify.jpg" width="760" height="293" loading="lazy"
+                 alt="Left: an agent reaches the goal vicinity but cannot tell which mug matches the description. Right: Active Instance Verification resolves the attributes one at a time over a six-sector viewpoint topology" />
+          </a>
+          <p class="tag mono"><span class="v">CVPR 2026</span>FMEA Workshop &middot; Poster</p>
+          <h3>PInVerify</h3>
+          <p class="finding">Reaching the goal vicinity is <em>not</em> finding the right instance.
+            An offline embodied benchmark for active instance verification &mdash;
+            <b>3,000 episodes</b> across 18 categories, with trap views and unreachable sectors
+            built into the navigation topology.</p>
+          <p class="lk mono">
+            <a href="https://avalon-s.github.io/PInVerify/">Project</a>
+            <a href="https://arxiv.org/abs/2605.30639">arXiv</a>
+            <a href="https://github.com/Avalon-S/PInVerify">Code</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <a class="shot" href="categories/publications.html">
+            <img src="assets/thumbs/geoselect.jpg" width="760" height="290" loading="lazy"
+                 alt="Implicit region-text matching picks the wrong aircraft while GeoSelect executes a spatial program and returns the correct instance" />
+          </a>
+          <p class="tag mono"><span class="v">IEEE TGRS</span>Under review</p>
+          <h3>GeoSelect</h3>
+          <p class="finding">Recast referring segmentation as executing a <em>typed spatial
+            program</em> instead of matching embeddings. Training-free, single GPU, and
+            <b>more than twice</b> the best prior training-free mIoU on RRSIS-D.</p>
+          <p class="lk mono">
+            <a href="https://avalon-s.github.io/GeoSelect/">Project</a>
+            <a href="https://arxiv.org/abs/2607.03869">arXiv</a>
+          </p>
+        </article>
+
+      </div>
+      <p class="more-link mono"><a href="categories/publications.html">All 08 publications &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- ---------------------------- 03 NEWS ----------------------------- -->
   <section id="news">
     <div class="g12">
       <header class="band">
-        <span class="no">02</span><h2>News</h2><span class="ln"></span>
+        <span class="no">03</span><h2>News</h2><span class="ln"></span>
         <span class="ct mono">07 entries</span>
       </header>
       <div class="tl">
@@ -196,7 +262,7 @@
   <section id="research">
     <div class="g12">
       <header class="band">
-        <span class="no">03</span><h2>Research Interests</h2><span class="ln"></span>
+        <span class="no">04</span><h2>Research Interests</h2><span class="ln"></span>
         <span class="ct mono">06 units</span>
       </header>
       <div class="spec">
@@ -216,7 +282,7 @@
     <div class="g12 mono">
       <div class="a">Jiang, Yuhang &mdash; 蒋雨航<br/>Research Intern, Huawei Pisa Research Center</div>
       <div class="b">Agent memory &middot; AI agents &middot; Mech interp<br/>Embodied AI &middot; VLM &middot; Remote sensing</div>
-      <div class="c">&copy; 2026<br/><b>Sheet 01 / 09</b></div>
+      <div class="c">&copy; 2026<br/><b>Sheet 01 / 08</b></div>
     </div>
   </footer>
 
