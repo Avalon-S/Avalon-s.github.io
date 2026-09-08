@@ -196,6 +196,9 @@ img{max-width:100%}
   font-weight:500; letter-spacing:-.011em}
 .prose .a1{color:var(--accent-t)}
 .prose .a2{color:var(--accent2)}
+.prose a{border-bottom:1px solid var(--accent); padding-bottom:2px;
+  transition:color .15s,border-color .15s}
+.prose a:hover{color:var(--accent-t); border-bottom-color:var(--accent-t)}
 
 .notes{grid-column:8 / span 4; border-left:1px solid var(--line); padding-left:22px}
 .notes dl{margin:0}
