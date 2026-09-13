@@ -332,6 +332,8 @@ details.more summary:hover{color:var(--ink)}
 .abs{margin:14px 0 0; max-width:68ch}
 .abs p{font-size:15px; line-height:1.68; color:var(--dim); margin:0}
 .abs em,.pubs h3 em,.tl .msg em{font-style:italic}
+.abs a{color:var(--accent2); border-bottom:1px solid var(--line); padding-bottom:1px}
+.abs a:hover{color:var(--accent-t); border-bottom-color:var(--accent-t)}
 .abs sub,.abs sup{font-size:.75em}
 .abs .lbl{color:var(--accent-t); font-family:"IBM Plex Mono",monospace; font-size:12px;
   letter-spacing:.13em; text-transform:uppercase; display:block; margin-bottom:7px}
