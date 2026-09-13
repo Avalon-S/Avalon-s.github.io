@@ -7,7 +7,8 @@
 :root{
   --paper:#fcfdfe;
   --ink:#0e1c33;
-  --dim:#546482;
+  --body:#1f2c45;               /* paragraph text */
+  --dim:#3f4d68;                /* labels / meta */
   --accent:#c8940c;             /* gold — large / decorative only */
   --accent-t:#966c07;           /* gold for small text — 4.68:1 on --paper */
   --accent2:#0f4c9c;            /* navy blue — structure */
@@ -23,7 +24,8 @@
 [data-theme="dark"]{
   --paper:#050b18;
   --ink:#e9f0fb;
-  --dim:#7b8dad;
+  --body:#d6deec;
+  --dim:#a3b1cb;
   --accent:#f0b323;
   --accent-t:#f0b323;           /* 10.5:1 on the dark ground */
   --accent2:#5b9bf5;
@@ -40,7 +42,7 @@ body{
   background:var(--paper);
   color:var(--ink);
   font-family:Archivo,"Helvetica Neue",Arial,sans-serif;
-  font-size:16px;
+  font-size:17.5px;
   line-height:1.58;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
@@ -55,11 +57,11 @@ img{max-width:100%}
 /* the annotation layer — monospace carries every label */
 .mono{
   font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Consolas,monospace;
-  font-size:12px; letter-spacing:.13em; text-transform:uppercase; font-weight:500;
+  font-size:14.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:500;
 }
 .mono-s{
   font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;
-  font-size:11px; letter-spacing:.18em; text-transform:uppercase; font-weight:500;
+  font-size:13.5px; letter-spacing:.14em; text-transform:uppercase; font-weight:500;
 }
 
 /* ==================================================================
@@ -88,7 +90,7 @@ img{max-width:100%}
 .topbar .brand .mk{
   width:25px; height:25px; flex:none; display:grid; place-items:center;
   background:var(--accent2); color:var(--paper);
-  font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600;
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; font-weight:600;
   letter-spacing:.02em; transition:background .15s;
 }
 .topbar .brand:hover .mk{background:var(--accent-t)}
@@ -125,7 +127,7 @@ img{max-width:100%}
   overflow-y:auto; overflow-x:hidden; min-height:0}
 .vnav a,.vnav button{
   writing-mode:vertical-rl; text-orientation:mixed;
-  font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.18em;
+  font-family:"IBM Plex Mono",monospace; font-size:14.5px; letter-spacing:.14em;
   text-transform:uppercase; font-weight:500; color:var(--dim);
   background:none; border:none; padding:6px 0; cursor:pointer;
   display:flex; align-items:center; gap:9px; transition:color .15s;
@@ -137,11 +139,11 @@ img{max-width:100%}
 .vnav .on i{background:var(--accent-t); border-color:var(--accent-t)}
 
 .spine .loc{writing-mode:vertical-rl; color:var(--dim); flex:none;
-  font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.2em;
+  font-family:"IBM Plex Mono",monospace; font-size:13.5px; letter-spacing:.16em;
   text-transform:uppercase}
 .theme-toggle{
   width:30px; height:30px; border:1px solid var(--line); background:var(--paper);
-  color:var(--dim); cursor:pointer; font-size:14px; line-height:1;
+  color:var(--dim); cursor:pointer; font-size:15.5px; line-height:1;
   display:grid; place-items:center; transition:color .15s,border-color .15s;
 }
 .theme-toggle:hover{color:var(--accent-t); border-color:var(--accent-t)}
@@ -171,7 +173,7 @@ img{max-width:100%}
 /* ==================================================================
    MASTHEAD
    ================================================================== */
-.top{padding:clamp(48px,7vw,96px) 0 0; position:relative}
+.top{padding:clamp(32px,4.5vw,64px) 0 0; position:relative}
 .slug{grid-column:1 / -1; color:var(--accent-t); padding-bottom:24px;
   display:flex; align-items:center; gap:11px}
 .slug::before{content:""; width:26px; height:2px; background:var(--accent); flex:none}
@@ -192,7 +194,7 @@ img{max-width:100%}
 
 .reading{padding:clamp(34px,4.5vw,58px) 0 0}
 .prose{grid-column:1 / span 6; padding-right:32px}
-.prose p{margin:0 0 19px; font-size:clamp(17px,1.45vw,22px); line-height:1.5;
+.prose p{margin:0 0 19px; font-size:clamp(18.5px,1.59vw,24px); line-height:1.5;
   font-weight:500; letter-spacing:-.011em}
 .prose .a1{color:var(--accent-t)}
 .prose .a2{color:var(--accent2)}
@@ -208,11 +210,11 @@ img{max-width:100%}
 .notes .plate figcaption{margin-top:9px; color:var(--dim)}
 .notes .n{margin-bottom:18px}
 .notes dd .ln2{display:block; margin-top:6px; padding-left:12px;
-  border-left:1px solid var(--line); font-size:13.5px; font-weight:400;
-  line-height:1.5; color:var(--dim)}
+  border-left:1px solid var(--line); font-size:15px; font-weight:400;
+  line-height:1.5; color:var(--body)}
 .notes dd .ln2 b{color:var(--accent2); font-weight:600}
 .notes .n dt{color:var(--dim); margin-bottom:5px}
-.notes .n dd{margin:0; font-size:14.5px; line-height:1.55; font-weight:500}
+.notes .n dd{margin:0; font-size:16px; line-height:1.55; font-weight:500}
 .notes a{border-bottom:1px solid var(--accent); padding-bottom:1px}
 .notes a:hover{color:var(--accent-t)}
 .notes .ext::after{content:" \2197"; color:var(--accent); font-size:.85em}
@@ -220,13 +222,13 @@ img{max-width:100%}
 /* ==================================================================
    SECTION BAND
    ================================================================== */
-section{padding-top:clamp(56px,6.5vw,100px); scroll-margin-top:24px}
+section{padding-top:clamp(40px,4.5vw,72px); scroll-margin-top:24px}
 .band{grid-column:1 / -1; display:flex; align-items:center; gap:16px;
   padding-bottom:26px}
 .band .no{font-size:clamp(32px,3.4vw,48px); font-weight:700; line-height:1;
   letter-spacing:-.04em; color:transparent; -webkit-text-stroke:1px var(--accent);
   flex:none}
-.band h2{margin:0; font-size:clamp(18px,1.75vw,24px); font-weight:600;
+.band h2{margin:0; font-size:clamp(20px,1.93vw,26.5px); font-weight:600;
   letter-spacing:-.02em; flex:none}
 .band .ln{flex:1; height:1px; background:var(--line)}
 .band .ct{flex:none; color:var(--dim)}
@@ -248,9 +250,9 @@ section{padding-top:clamp(56px,6.5vw,100px); scroll-margin-top:24px}
 .card .shot:hover img{transform:scale(1.03)}
 .card .tag{margin:0 0 10px; color:var(--dim); display:flex; flex-wrap:wrap; gap:10px}
 .card .tag .v{color:var(--accent-t)}
-.card h3{margin:0 0 11px; font-size:clamp(19px,1.8vw,25px); line-height:1.16;
+.card h3{margin:0 0 11px; font-size:clamp(21px,1.98vw,27.5px); line-height:1.16;
   letter-spacing:-.026em; font-weight:600}
-.card .finding{margin:0 0 18px; font-size:15.5px; line-height:1.6; color:var(--dim); flex:1}
+.card .finding{margin:0 0 18px; font-size:17px; line-height:1.6; color:var(--body); flex:1}
 .card .finding b{color:var(--ink); font-weight:600}
 .card .finding em{font-style:italic; color:var(--accent-t)}
 .card .lk{margin:0}
@@ -274,7 +276,7 @@ section{padding-top:clamp(56px,6.5vw,100px); scroll-margin-top:24px}
   transform:rotate(45deg)}
 .tl .ev:hover{background:var(--wash)}
 .tl .ts{color:var(--accent2); padding-top:3px}
-.tl .msg{font-size:16.5px; line-height:1.5; max-width:66ch}
+.tl .msg{font-size:18px; line-height:1.5; max-width:84ch}
 .tl .msg a{border-bottom:1px solid var(--accent)}
 .tl .msg a:hover{color:var(--accent-t)}
 .tl .msg em{font-style:italic; color:var(--accent-t)}
@@ -293,7 +295,7 @@ section{padding-top:clamp(56px,6.5vw,100px); scroll-margin-top:24px}
 .spec .u:hover{background:var(--wash)}
 .spec .u .id{color:var(--accent-t); display:flex; align-items:center; gap:9px}
 .spec .u .id::after{content:""; flex:1; height:1px; background:var(--line)}
-.spec .u h3{margin:0; font-size:clamp(18px,1.8vw,26px); line-height:1.14;
+.spec .u h3{margin:0; font-size:clamp(20px,1.98vw,28.5px); line-height:1.14;
   letter-spacing:-.026em; font-weight:600}
 
 /* ==================================================================
@@ -306,13 +308,13 @@ section{padding-top:clamp(56px,6.5vw,100px); scroll-margin-top:24px}
 .pubs > li:hover{background:var(--wash)}
 .pubs .no{font-size:32px; font-weight:700; line-height:.9; letter-spacing:-.04em;
   color:transparent; -webkit-text-stroke:1px var(--accent2)}
-.pubs h3{margin:0 0 10px; font-size:clamp(18px,1.65vw,24px); line-height:1.24;
-  letter-spacing:-.023em; font-weight:600; max-width:46ch}
-.pubs .tldr{margin:0 0 12px; font-size:15.5px; line-height:1.55; color:var(--ink);
-  max-width:56ch; padding-left:13px; border-left:2px solid var(--accent)}
+.pubs h3{margin:0 0 10px; font-size:clamp(20px,1.81vw,26.5px); line-height:1.24;
+  letter-spacing:-.023em; font-weight:600; max-width:64ch}
+.pubs .tldr{margin:0 0 12px; font-size:17px; line-height:1.55; color:var(--ink);
+  max-width:80ch; padding-left:13px; border-left:2px solid var(--accent)}
 .pubs .tldr b{font-weight:600}
 .pubs .tldr em{font-style:italic; color:var(--accent-t)}
-.pubs .who{margin:0 0 12px; font-size:15px; color:var(--dim); line-height:1.5}
+.pubs .who{margin:0 0 12px; font-size:16.5px; color:var(--body); line-height:1.5}
 .pubs .who b{color:var(--ink); font-weight:600}
 .pubs .lk{margin:0}
 .pubs .lk a{margin-right:16px; color:var(--dim); border-bottom:1px solid var(--line);
@@ -323,25 +325,25 @@ section{padding-top:clamp(56px,6.5vw,100px); scroll-margin-top:24px}
 
 details.more{margin-top:16px}
 details.more summary{cursor:pointer; list-style:none; color:var(--dim);
-  font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.13em;
+  font-family:"IBM Plex Mono",monospace; font-size:14.5px; letter-spacing:.1em;
   text-transform:uppercase; font-weight:500; display:inline-block}
 details.more summary::-webkit-details-marker{display:none}
 details.more summary::before{content:"\25B8 "; color:var(--accent-t)}
 details.more[open] summary::before{content:"\25BE "}
 details.more summary:hover{color:var(--ink)}
-.abs{margin:14px 0 0; max-width:68ch}
-.abs p{font-size:15px; line-height:1.68; color:var(--dim); margin:0}
+.abs{margin:14px 0 0; max-width:92ch}
+.abs p{font-size:16.5px; line-height:1.68; color:var(--body); margin:0}
 .abs em,.pubs h3 em,.tl .msg em{font-style:italic}
 .abs a{color:var(--accent2); border-bottom:1px solid var(--line); padding-bottom:1px}
 .abs a:hover{color:var(--accent-t); border-bottom-color:var(--accent-t)}
 .abs sub,.abs sup{font-size:.75em}
-.abs .lbl{color:var(--accent-t); font-family:"IBM Plex Mono",monospace; font-size:12px;
-  letter-spacing:.13em; text-transform:uppercase; display:block; margin-bottom:7px}
+.abs .lbl{color:var(--accent-t); font-family:"IBM Plex Mono",monospace; font-size:14.5px;
+  letter-spacing:.1em; text-transform:uppercase; display:block; margin-bottom:7px}
 .abs figure{margin:20px 0 0}
 .abs img{width:100%; display:block; border:1px solid var(--line)}
-.abs figcaption{margin-top:9px; font-size:13px; line-height:1.55; color:var(--dim)}
+.abs figcaption{margin-top:9px; font-size:14.5px; line-height:1.55; color:var(--body)}
 .abs figcaption .fno{color:var(--accent-t); font-family:"IBM Plex Mono",monospace;
-  font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; margin-right:8px}
+  font-size:14px; letter-spacing:.1em; text-transform:uppercase; margin-right:8px}
 .gallery{display:grid; gap:20px}
 
 /* ------------------------------------------------------------------
@@ -359,7 +361,7 @@ details.more summary:hover{color:var(--ink)}
 .chips button{
   flex:1 0 auto;
   font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;
-  font-size:12px; letter-spacing:.13em; text-transform:uppercase; font-weight:500;
+  font-size:14.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:500;
   display:flex; align-items:center; justify-content:center; gap:9px;
   padding:12px 16px; cursor:pointer;
   background:transparent; color:var(--ink);
@@ -369,22 +371,22 @@ details.more summary:hover{color:var(--ink)}
 .chips button:first-of-type{border-left:none}
 .chips button:hover{background:var(--paper)}
 .chips button.active{background:var(--accent2); color:var(--paper)}
-.chips button .ct{font-size:10.5px; color:var(--dim); letter-spacing:.06em}
+.chips button .ct{font-size:13px; color:var(--dim); letter-spacing:.06em}
 .chips button.active .ct{color:var(--paper); opacity:.72}
 
 .spinecap{writing-mode:vertical-rl; color:var(--dim); flex:none;
-  font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.2em;
+  font-family:"IBM Plex Mono",monospace; font-size:13.5px; letter-spacing:.16em;
   text-transform:uppercase; display:flex; align-items:center; gap:9px}
 .spinecap::after{content:""; width:1px; height:18px; background:var(--accent)}
 
 /* ==================================================================
    RECORD LISTS — work, projects, competitions, other experiences
    ================================================================== */
-.where{margin:0 0 12px; font-size:14.5px; color:var(--dim)}
+.where{margin:0 0 12px; font-size:16px; color:var(--body)}
 .where b{color:var(--accent2); font-weight:600}
 .rlist{list-style:none; margin:13px 0 0; padding:0}
 .rlist > li{position:relative; padding-left:19px; margin-bottom:9px;
-  font-size:15px; line-height:1.62; color:var(--dim)}
+  font-size:16.5px; line-height:1.62; color:var(--body)}
 .rlist > li:last-child{margin-bottom:0}
 .rlist > li::before{content:""; position:absolute; left:0; top:11px;
   width:7px; height:1px; background:var(--accent)}
@@ -393,21 +395,21 @@ details.more summary:hover{color:var(--ink)}
 .rlist a:hover{color:var(--accent-t); border-bottom-color:var(--accent-t)}
 
 /* a lead-in line under a section band */
-.lead{grid-column:1 / -1; max-width:62ch; margin:0 0 26px; font-size:16.5px;
-  line-height:1.6; color:var(--dim)}
+.lead{grid-column:1 / -1; max-width:82ch; margin:0 0 26px; font-size:18px;
+  line-height:1.6; color:var(--body)}
 
 /* chips of plain items — personal life */
 .taglist{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:9px}
-.taglist li{font-size:15.5px; line-height:1.3; border:1px solid var(--line);
+.taglist li{font-size:17px; line-height:1.3; border:1px solid var(--line);
   padding:9px 14px; transition:border-color .15s,color .15s}
 .taglist li:hover{border-color:var(--accent-t); color:var(--accent-t)}
 .taglist li em{font-style:italic}
 
 /* two/three-up cell blocks reusing the spec strip */
 .spec .u.tall{min-height:0; padding-bottom:24px}
-.spec .u .sub{color:var(--dim); font-size:14.5px; line-height:1.55}
+.spec .u .sub{color:var(--body); font-size:16px; line-height:1.55}
 
-.note{grid-column:1 / -1; color:var(--dim); font-size:14.5px; padding-top:20px}
+.note{grid-column:1 / -1; color:var(--body); font-size:16px; padding-top:20px}
 .note b{color:var(--ink); font-weight:600}
 
 /* ==================================================================
