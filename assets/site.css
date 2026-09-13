@@ -16,7 +16,7 @@
   --mark:rgba(14,28,51,.26);
   --wash:rgba(15,76,156,.05);
 
-  --spine:64px;
+  --spine:84px;
   --topbar:44px;
   --pad:clamp(18px,3vw,44px);
   --maxw:1480px;
@@ -120,14 +120,20 @@ img{max-width:100%}
 .spine{
   position:fixed; left:0; top:var(--topbar); bottom:0; width:var(--spine); z-index:30;
   background:var(--paper); border-right:1px solid var(--line);
-  display:flex; flex-direction:column; align-items:center; padding:14px 0 12px;
+  display:flex; flex-direction:column; align-items:center; padding:10px 0;
 }
 .vnav{flex:1; display:flex; flex-direction:column; align-items:center;
-  justify-content:center; gap:24px; padding:20px 0;
-  overflow-y:auto; overflow-x:hidden; min-height:0}
+  gap:14px; padding:8px 0;
+  overflow-y:auto; overflow-x:hidden; min-height:0; scrollbar-width:none}
+.vnav::-webkit-scrollbar{display:none}
+/* safe centring: centred when the items fit, top-aligned and scrollable when
+   they don't. justify-content:center pushed the overflow above the scroll
+   origin, so the first and last items were clipped out of reach. */
+.vnav > :first-child{margin-top:auto}
+.vnav > :last-child{margin-bottom:auto}
 .vnav a,.vnav button{
   writing-mode:vertical-rl; text-orientation:mixed;
-  font-family:"IBM Plex Mono",monospace; font-size:14.5px; letter-spacing:.14em;
+  font-family:"IBM Plex Mono",monospace; font-size:14.5px; letter-spacing:.08em;
   text-transform:uppercase; font-weight:500; color:var(--dim);
   background:none; border:none; padding:6px 0; cursor:pointer;
   display:flex; align-items:center; gap:9px; transition:color .15s;
@@ -465,6 +471,7 @@ footer .c b{color:var(--accent); font-weight:500}
     border-right:none; border-bottom:1px solid var(--line); overflow-x:auto}
   .vnav{flex-direction:row; gap:16px; justify-content:flex-start; padding:0; flex:1}
   .vnav a,.vnav button{writing-mode:horizontal-tb; padding:0; white-space:nowrap}
+  .vnav > :first-child,.vnav > :last-child{margin:0}
   .spine .loc{display:none}
   .spine-filter{display:none}   /* the chips row is the filter on mobile */
   .chips{display:grid; grid-template-columns:repeat(2,1fr)}
@@ -490,5 +497,17 @@ footer .c b{color:var(--accent); font-weight:500}
   .card{grid-column:1 / -1; border-right:none !important}
   .pubs .at{text-align:left}
   footer .a,footer .b,footer .c{grid-column:1 / -1; text-align:left; padding-bottom:14px}
+}
+/* short screens: the vertical rail must show every item without scrolling */
+@media(max-height:860px){
+  .spine .loc,.spinecap{display:none}
+}
+@media(max-height:740px){
+  .vnav{gap:8px}
+  .vnav a,.vnav button{font-size:12.5px; padding:3px 0}
+}
+@media(max-height:660px){
+  .vnav{gap:6px}
+  .vnav a,.vnav button{font-size:12px; gap:6px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none !important}}
