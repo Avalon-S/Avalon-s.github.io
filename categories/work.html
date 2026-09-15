@@ -80,9 +80,10 @@
             <h3>Research Intern</h3>
             <p class="where">Pisa, Toscana, Italy &middot; On-site</p>
             <ul class="rlist">
-              <li>Led an independent project on <b>memory for multimodal agents</b>, from problem definition to paper. A controlled decomposition showed that how retrieved evidence is delivered to the model matters far more than retrieval quality: delivering the original pixels is worth +13.87 points, perfect retrieval +2.31.</li>
-              <li>Proposed a training-free delivery method that sets the state of the art on DMV-Bench, beating its strongest published method at every setting by 7.63 to 22.62 points, and leads published memory-augmented agents on MemLens on a tenth to a seventieth of the full-context input; at 32K with dev-fitted selection it surpasses GPT-5.4 and matches Gemini-3.1-Pro reading the whole conversation. First-author paper under review.</li>
-              <li>Owned the <b>LLM post-training</b> pipeline for automotive AI end to end: data construction and cleaning, SFT, RL with reward design, and evaluation.</li>
+              <li><b>Led an independent research project on memory for multimodal agents</b>, from problem definition and experiment design to paper; first-author paper under review. Controlled experiments that hold the retrieved set fixed and change one variable at a time located the bottleneck in <b>delivery</b> rather than retrieval: delivering the original images is worth +13.87 points, perfect retrieval only +2.31, and the delivery gain grows on a stronger backbone (+17.92 at 32B).</li>
+              <li><b>Proposed DeliverMem, a training-free delivery method that leaves the memory store unchanged</b> (original modality, readable identifiers and temporal position, plus a retrieval-side adaptation): <b>state of the art on DMV-Bench</b>, ahead of the best prior method at every setting on both backbones by 7.63 to 22.62 points; on MemLens it leads the strongest published memory-augmented agent by at least 9.74 points at all four context lengths, on a tenth to a seventieth of the full-context input. At MemLens 32K with dev-fitted selection it <b>surpasses GPT-5.4 and matches Gemini-3.1-Pro</b> while delivering about 2,400 tokens, a tenth of what they read.</li>
+              <li><b>Owned the LLM post-training pipeline for cockpit AI end to end</b>: data construction and cleaning, SFT, RL with reward design, evaluation and result analysis.</li>
+              <li>Built inference, training and evaluation pipelines on vLLM, Transformers and ms-swift, supporting large-scale controlled comparisons and ablations across backbones and context lengths.</li>
             </ul>
           </div>
           <div class="at mono"><span class="v">04.2026 &mdash; 10.2026</span>Research Intern</div>
@@ -107,7 +108,7 @@
               <b><a href="https://eliricci.eu/">Elisa Ricci</a></b></p>
             <ul class="rlist">
               <li>Researched <b>active instance verification</b> in embodied AI: how agents should plan viewpoints to confirm fine-grained object identity from natural-language descriptions in realistic 3D environments.</li>
-              <li>Developed benchmarks, MLLM-based agent pipelines with structured attribute reasoning and multi-view belief tracking, and fine-tuned vision-language models via SFT and reinforcement learning alignment.</li>
+              <li>Built <b><a href="https://avalon-s.github.io/PInVerify/">PInVerify</a></b>, the first offline multi-view benchmark for the task, plus MLLM-based agent pipelines with structured attribute reasoning and multi-view belief tracking, and fine-tuned vision-language models via SFT and reinforcement learning alignment.</li>
             </ul>
           </div>
           <div class="at mono"><span class="v">03.2025 &mdash; 03.2026</span>Research Intern</div>
