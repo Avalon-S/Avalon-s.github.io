@@ -78,7 +78,7 @@
     <div class="g12">
       <header class="band">
         <span class="no">02</span><h2>Selected Works</h2><span class="ln"></span>
-        <span class="ct mono" data-pub-count>08 of 08</span>
+        <span class="ct mono" data-pub-count>09 of 09</span>
       </header>
 
       <div class="chips" role="group" aria-label="Filter publications by research area">
@@ -191,8 +191,40 @@
         </li>
 
         <!-- 04 -->
-        <li data-area="mechinterp">
+        <li data-area="adversarial">
           <div class="no">04</div>
+          <div>
+            <h3>Median Temporal Ensembling: Training-Free Robust Aggregation for Action-Chunked Visuomotor Policies</h3>
+            <p class="tldr">Temporal ensembling blends the overlapping predictions of an action-chunked policy with a weighted mean, whose breakdown point is <b>0</b> &mdash; one corrupted prediction moves it without bound. Taking the coordinate-wise <em>median</em> of the same predictions is a one-line change that needs no retraining: never worse across <b>25</b> settings and significantly better in <b>15</b>.</p>
+            <p class="who"><b>Yuhang Jiang</b> (sole author)</p>
+            <p class="lk mono">
+              <a href="https://avalon-s.github.io/MedianTE/">Project page</a>
+              <a href="https://arxiv.org/abs/2609.27167">arXiv</a>
+              <a href="https://github.com/Avalon-S/MedianTE">Code</a>
+            </p>
+            <details class="more">
+              <summary>Abstract &amp; figures</summary>
+              <div class="abs">
+                <p><span class="lbl">Abstract</span>Action-chunked visuomotor policies predict overlapping trajectories, so every executed action is covered by several predictions. Temporal ensembling smooths execution by combining these predictions with an exponentially weighted mean. One corrupted prediction can move the aggregate without bound: its breakdown point is 0. We use adversarial corruption to stress this deployed aggregator and to compare two kinds of guarantee. A <em>metric</em> guarantee bounds the response to a perturbation of a given size. A <em>combinatorial</em> guarantee instead bounds the damage when at most q of the M candidates covering a timestep are corrupted, whatever their size. Encoder adversarial fine-tuning recovers 44% of the loss under the published patch attack, but only 7.3% after the attacker&rsquo;s step size is increased. By contrast, the coordinate-wise median of the same candidate set keeps its recovered fraction flat as attack optimisation increases. Median temporal ensembling costs one line and requires no retraining. Across 25 (configuration, corruption-level) combinations it is never worse than the mean and is significantly better in 15. It also transfers to a second policy class, and it recovers performance under a failure with no attacker in the loop at all: camera frames that arrive blank. Its effect on clean data is configuration-dependent, from &minus;0.04 to +0.07. We also give the boundary: corruption that shifts every covering prediction by the same amount is invisible to this whole family of statistics, and no equivariant aggregator can remove it.</p>
+                <div class="gallery">
+                  <figure>
+                    <img src="pub_assets/mediante_main.jpg" alt="Recovered fraction of attack-induced loss against attack optimisation effort: metric-type defences fall away while the combinatorial one stays flat" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 01</span>Metric-type robustness degrades as attack optimisation increases; combinatorial robustness persists. The vertical axis is the fraction of attack-induced loss the defence recovers, with the perturbation bound fixed throughout. The horizontal axis is optimisation effort relative to each attack&rsquo;s own baseline, measured in PGD iterations for the two burst curves and in optimiser step size for the patch curves. Stars mark released-patch results; error bars are &plusmn;1 standard error, paired for the burst curves and binomial for the patch curves.</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="pub_assets/mediante_qualitative.jpg" alt="Two filmstrips of the same robot episode under the same attack: the weighted mean fails to grasp the can, the median succeeds" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 02</span>One episode of <em>can</em> at h=2, q=3, run twice from the same seed and under the same attack, changing only the aggregator: the weighted mean (top) fails and the median (bottom) succeeds. A circle marks the can in each frame; columns are equally spaced in time and a star marks a corrupted query window. Frames are a third-person render for visualisation only; the policy sees two 84&times;84 views.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="at mono"><span class="v">Preprint</span>arXiv</div>
+        </li>
+
+        <!-- 05 -->
+        <li data-area="mechinterp">
+          <div class="no">05</div>
           <div>
             <h3>Refit the Probe: Single-Direction Ablation Is Not a Necessity Test</h3>
             <p class="tldr">Ablating the direction a probe found does not remove what the probe read &mdash; a refitted probe recovers its accuracy &mdash; so <b>neither a large task drop nor a near-zero one settles necessity</b>.</p>
@@ -214,9 +246,9 @@
           <div class="at mono"><span class="v">Preprint</span>arXiv</div>
         </li>
 
-        <!-- 05 -->
+        <!-- 06 -->
         <li data-area="mechinterp">
-          <div class="no">05</div>
+          <div class="no">06</div>
           <div>
             <h3>A Circuit, Not The Circuit: Non-Unique Causal Localisation of the Mamba-2 State Sink</h3>
             <p class="tldr">A probe&rsquo;s top units are routinely called <em>the</em> circuit. In Mamba-2 a <b>near-disjoint</b> head set matches their ablation effect &mdash; probing localises where state is linearly available, not where the computation is bottlenecked.</p>
@@ -244,9 +276,9 @@
           <div class="at mono"><span class="v">Preprint</span>arXiv</div>
         </li>
 
-        <!-- 06 -->
+        <!-- 07 -->
         <li data-area="others">
-          <div class="no">06</div>
+          <div class="no">07</div>
           <div>
             <h3>CL-RAG: A Closed-Loop Multimodal Retrieval-Augmented Generation Architecture for Robust Human-Robot Control Interaction</h3>
             <p class="who">Bowen Zhang, <b>Yuhang Jiang</b>, Lingxiang Hu, Dun Li, Qianqian Hu*</p>
@@ -257,9 +289,9 @@
           <div class="at mono"><span class="v">WRC SARA 2025</span>Oral</div>
         </li>
 
-        <!-- 07 -->
+        <!-- 08 -->
         <li data-area="others">
-          <div class="no">07</div>
+          <div class="no">08</div>
           <div>
             <h3>Improved lightweight identification of agricultural diseases based on MobileNetV3</h3>
             <p class="who"><b>Yuhang Jiang</b>*, Wenping Tong</p>
@@ -272,9 +304,9 @@
           <div class="at mono"><span class="v">CAIBDA 2022</span>Oral</div>
         </li>
 
-        <!-- 08 -->
+        <!-- 09 -->
         <li data-area="others">
-          <div class="no">08</div>
+          <div class="no">09</div>
           <div>
             <h3>Intelligent contract software for agricultural insurance compensation</h3>
             <p class="who">Software copyright &mdash; registration 2022SR1568111</p>
