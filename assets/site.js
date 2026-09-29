@@ -43,6 +43,31 @@
       (sitenav.clientWidth - current.offsetWidth) / 2;
   }
 
+  /* ---- Selected Work carousel: arrows step one card, ends disable ---- */
+  var cards = document.querySelector('.cards');
+  var arrows = [].slice.call(document.querySelectorAll('[data-cards]'));
+  if (cards && arrows.length) {
+    var step = function () {
+      var c = cards.querySelector('.card');
+      return c ? c.getBoundingClientRect().width : cards.clientWidth / 3;
+    };
+    var sync = function () {
+      var max = cards.scrollWidth - cards.clientWidth - 1;
+      arrows.forEach(function (b) {
+        var back = Number(b.getAttribute('data-cards')) < 0;
+        b.disabled = back ? cards.scrollLeft <= 1 : cards.scrollLeft >= max;
+      });
+    };
+    arrows.forEach(function (b) {
+      b.addEventListener('click', function () {
+        cards.scrollBy({ left: Number(b.getAttribute('data-cards')) * step(), behavior: 'smooth' });
+      });
+    });
+    cards.addEventListener('scroll', sync);
+    window.addEventListener('resize', sync);
+    sync();
+  }
+
   /* ---- scrollspy for in-page spine nav ---- */
   var spyLinks = [].slice.call(document.querySelectorAll('.vnav a[href^="#"]'));
   if (spyLinks.length && 'IntersectionObserver' in window) {

@@ -43,6 +43,7 @@
   <span class="spinecap mono">Filter</span>
   <nav class="vnav" aria-label="Filter by research area">
     <button type="button" data-filter="all" class="on"><i></i>All</button>
+    <button type="button" data-filter="memory"><i></i>Memory</button>
     <button type="button" data-filter="embodied"><i></i>Embodied</button>
     <button type="button" data-filter="mechinterp"><i></i>Mech interp</button>
     <button type="button" data-filter="remote"><i></i>Remote</button>
@@ -78,12 +79,13 @@
     <div class="g12">
       <header class="band">
         <span class="no">02</span><h2>Selected Works</h2><span class="ln"></span>
-        <span class="ct mono" data-pub-count>09 of 09</span>
+        <span class="ct mono" data-pub-count>10 of 10</span>
       </header>
 
       <div class="chips" role="group" aria-label="Filter publications by research area">
         <span class="chips-lbl mono">Filter</span>
         <button type="button" data-filter="all" class="active">All</button>
+        <button type="button" data-filter="memory">Agent Memory</button>
         <button type="button" data-filter="embodied">Embodied AI</button>
         <button type="button" data-filter="mechinterp">Mechanistic Interpretability</button>
         <button type="button" data-filter="remote">Remote Sensing</button>
@@ -191,8 +193,39 @@
         </li>
 
         <!-- 04 -->
-        <li data-area="adversarial">
+        <li data-area="memory">
           <div class="no">04</div>
+          <div>
+            <h3>Retrieved but Not Delivered: Multimodal Memory Delivery for Long-Term Agents</h3>
+            <p class="tldr">Between retrieving a memory and answering from it sits a stage evaluations never isolate: <em>delivery</em> &mdash; what of the retrieved memory reaches the model, and in what form. With the retrieved set held fixed, delivering the original pixels is worth <b>+13.87</b> points while making retrieval perfect adds <b>2.31</b>. DeliverMem trains nothing and leads both benchmarks from one fixed configuration.</p>
+            <p class="who"><b>Yuhang Jiang</b>*, Qingwei Liao, Kaize Yin, Xingling Liu, Luca Cuomo, Silvio Bacci</p>
+            <p class="lk mono">
+              <a href="https://avalon-s.github.io/DeliverMem/">Project page</a>
+              <a href="https://arxiv.org/abs/2609.32590">arXiv</a>
+            </p>
+            <details class="more">
+              <summary>Abstract &amp; figures</summary>
+              <div class="abs">
+                <p><span class="lbl">Abstract</span>Work on memory for multimodal agents optimizes what is written, updated and retrieved. Between retrieval and the answer, however, is a stage that multimodal memory evaluations do not isolate: what of the retrieved memory reaches the model, and in what form. We call it delivery, and a controlled decomposition on MemLens locates the remaining room there. With the retrieved evidence set exactly fixed, delivering the original pixels instead of withholding them raises accuracy by 13.87 points on an 8B backbone, whereas making retrieval perfect on those same messages improves it by 2.31. Delivery is the larger term on all three MemLens backbones and grows with backbone strength; retrieval grows too, without closing the gap. We propose <b>DeliverMem</b>, an instantiation of delivery as three decisions: keep the original modality, give each item a readable identity, and state when it was seen, with a retrieval-side adapter for the one property delivery cannot supply. Each is measured against a delivery-matched control that alters only its own variable. DeliverMem leads the strongest published memory agent on MemLens at all four context lengths, and beats DMV-Bench&rsquo;s own strongest method at every setting on both backbones. On MemLens it does this on a tenth to a seventieth of the input. Each decision helps only where the question lacks what it supplies, and is null elsewhere. A single fixed configuration nonetheless leads both benchmarks, without training any component or modifying the stored records.</p>
+                <div class="gallery">
+                  <figure>
+                    <img src="pub_assets/delivermem_teaser.jpg" alt="The same memory question answered with the retrieved images withheld and with them delivered, beside a bar chart separating the delivery and retrieval terms" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 01</span><em>Left:</em> one MemLens question from our runs, answered with the pixels withheld and with them delivered. <em>Right:</em> the two quantities this paper separates, with the arrow marking the difference between them.</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="pub_assets/delivermem_arch.jpg" alt="Diagram of the memory pipeline from write and update through retrieval to delivery and answer" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 02</span>The memory pipeline, with the stage this paper isolates. MLLM is the answering model M.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="at mono"><span class="v">Preprint</span>arXiv</div>
+        </li>
+
+        <!-- 05 -->
+        <li data-area="adversarial">
+          <div class="no">05</div>
           <div>
             <h3>Median Temporal Ensembling: Training-Free Robust Aggregation for Action-Chunked Visuomotor Policies</h3>
             <p class="tldr">Temporal ensembling blends the overlapping predictions of an action-chunked policy with a weighted mean, whose breakdown point is <b>0</b> &mdash; one corrupted prediction moves it without bound. Taking the coordinate-wise <em>median</em> of the same predictions is a one-line change that needs no retraining: never worse across <b>25</b> settings and significantly better in <b>15</b>.</p>
@@ -222,9 +255,9 @@
           <div class="at mono"><span class="v">Preprint</span>arXiv</div>
         </li>
 
-        <!-- 05 -->
+        <!-- 06 -->
         <li data-area="mechinterp">
-          <div class="no">05</div>
+          <div class="no">06</div>
           <div>
             <h3>Refit the Probe: Single-Direction Ablation Is Not a Necessity Test</h3>
             <p class="tldr">Ablating the direction a probe found does not remove what the probe read &mdash; a refitted probe recovers its accuracy &mdash; so <b>neither a large task drop nor a near-zero one settles necessity</b>.</p>
@@ -246,9 +279,9 @@
           <div class="at mono"><span class="v">Preprint</span>arXiv</div>
         </li>
 
-        <!-- 06 -->
+        <!-- 07 -->
         <li data-area="mechinterp">
-          <div class="no">06</div>
+          <div class="no">07</div>
           <div>
             <h3>A Circuit, Not The Circuit: Non-Unique Causal Localisation of the Mamba-2 State Sink</h3>
             <p class="tldr">A probe&rsquo;s top units are routinely called <em>the</em> circuit. In Mamba-2 a <b>near-disjoint</b> head set matches their ablation effect &mdash; probing localises where state is linearly available, not where the computation is bottlenecked.</p>
@@ -276,9 +309,9 @@
           <div class="at mono"><span class="v">Preprint</span>arXiv</div>
         </li>
 
-        <!-- 07 -->
+        <!-- 08 -->
         <li data-area="others">
-          <div class="no">07</div>
+          <div class="no">08</div>
           <div>
             <h3>CL-RAG: A Closed-Loop Multimodal Retrieval-Augmented Generation Architecture for Robust Human-Robot Control Interaction</h3>
             <p class="who">Bowen Zhang, <b>Yuhang Jiang</b>, Lingxiang Hu, Dun Li, Qianqian Hu*</p>
@@ -289,9 +322,9 @@
           <div class="at mono"><span class="v">WRC SARA 2025</span>Oral</div>
         </li>
 
-        <!-- 08 -->
+        <!-- 09 -->
         <li data-area="others">
-          <div class="no">08</div>
+          <div class="no">09</div>
           <div>
             <h3>Improved lightweight identification of agricultural diseases based on MobileNetV3</h3>
             <p class="who"><b>Yuhang Jiang</b>*, Wenping Tong</p>
@@ -304,9 +337,9 @@
           <div class="at mono"><span class="v">CAIBDA 2022</span>Oral</div>
         </li>
 
-        <!-- 09 -->
+        <!-- 10 -->
         <li data-area="others">
-          <div class="no">09</div>
+          <div class="no">10</div>
           <div>
             <h3>Intelligent contract software for agricultural insurance compensation</h3>
             <p class="who">Software copyright &mdash; registration 2022SR1568111</p>

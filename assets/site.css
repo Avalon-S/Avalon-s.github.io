@@ -123,7 +123,7 @@ img{max-width:100%}
   display:flex; flex-direction:column; align-items:center; padding:10px 0;
 }
 .vnav{flex:1; display:flex; flex-direction:column; align-items:center;
-  gap:14px; padding:8px 0;
+  gap:14px; padding:6px 0;
   overflow-y:auto; overflow-x:hidden; min-height:0; scrollbar-width:none}
 .vnav::-webkit-scrollbar{display:none}
 /* safe centring: centred when the items fit, top-aligned and scrollable when
@@ -242,11 +242,22 @@ section{padding-top:clamp(40px,4.5vw,72px); scroll-margin-top:24px}
 /* ==================================================================
    SELECTED WORK — three cards, each one finding
    ================================================================== */
-.cards{grid-column:1 / -1; display:grid; grid-template-columns:repeat(12,1fr);
-  border-top:1px solid var(--line)}
-.card{grid-column:span 4; padding:22px 22px 26px; border-right:1px solid var(--line);
+.cards{grid-column:1 / -1; display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+  scroll-behavior:smooth; border-top:1px solid var(--line);
+  scrollbar-width:none; -ms-overflow-style:none}
+.cards::-webkit-scrollbar{display:none}
+/* three across; the rest of the row is reached with the arrows or by swiping */
+.card{flex:0 0 33.3333%; scroll-snap-align:start;
+  padding:22px 22px 26px; border-right:1px solid var(--line);
   border-bottom:1px solid var(--line); display:flex; flex-direction:column}
 .card:last-child{border-right:none}
+.cardnav{display:flex; gap:6px; flex:none; margin-left:14px}
+.cardnav button{width:32px; height:32px; flex:none; cursor:pointer; line-height:1;
+  font-size:15px; display:grid; place-items:center; background:transparent;
+  color:var(--dim); border:1px solid var(--line);
+  transition:color .15s,border-color .15s,opacity .15s}
+.cardnav button:hover:not(:disabled){color:var(--accent-t); border-color:var(--accent-t)}
+.cardnav button:disabled{opacity:.3; cursor:default}
 /* one fixed frame for every card so the titles line up whatever the
    source figure's aspect ratio is; contain, never crop a scientific figure */
 .card .shot{display:block; border:1px solid var(--line); margin-bottom:18px;
@@ -437,9 +448,7 @@ footer .c b{color:var(--accent); font-weight:500}
   .prose{grid-column:1 / span 7}
   .notes{grid-column:9 / span 4}
   .spec .u{grid-column:span 6}
-  .card{grid-column:span 6}
-  .card:nth-child(2n){border-right:none}
-  .card:last-child{border-right:1px solid var(--line)}
+  .card{flex-basis:50%}
   .spec .u:nth-child(3n){border-right:1px solid var(--line)}
   .spec .u:nth-child(2n){border-right:none}
   .spec .u:nth-child(-n+4){border-bottom:1px solid var(--line)}
@@ -494,7 +503,7 @@ footer .c b{color:var(--accent); font-weight:500}
   .spec .u{grid-column:1 / -1; border-right:none !important;
     border-bottom:1px solid var(--line) !important; min-height:0}
   .pubs > li{grid-template-columns:1fr; gap:12px}
-  .card{grid-column:1 / -1; border-right:none !important}
+  .card{flex-basis:100%; border-right:none}
   .pubs .at{text-align:left}
   footer .a,footer .b,footer .c{grid-column:1 / -1; text-align:left; padding-bottom:14px}
 }
