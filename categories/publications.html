@@ -79,7 +79,7 @@
     <div class="g12">
       <header class="band">
         <span class="no">02</span><h2>Selected Works</h2><span class="ln"></span>
-        <span class="ct mono" data-pub-count>10 of 10</span>
+        <span class="ct mono" data-pub-count>11 of 11</span>
       </header>
 
       <div class="chips" role="group" aria-label="Filter publications by research area">
@@ -193,8 +193,41 @@
         </li>
 
         <!-- 04 -->
-        <li data-area="memory">
+        <li data-area="mechinterp">
           <div class="no">04</div>
+          <div>
+            <h3>When Dynamic Scaling Fails: A Scale&ndash;State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs</h3>
+            <p class="tldr">Quantizing the recurrent state puts the quantizer <em>inside</em> the recurrence: the scale is derived from the state it then corrupts. INT4 that looks lossless at step 0 destroys recall a thousand steps later, and yoking the scale to a full-precision reference removes the norm explosion but recovers only <b>1.8 of the 5.4 nats</b> lost &mdash; contain the scale rather than locate outliers.</p>
+            <p class="who"><b>Yuhang Jiang</b> (sole author)</p>
+            <p class="lk mono">
+              <a href="https://avalon-s.github.io/dynamic-scaling-fails/">Project page</a>
+              <a href="https://arxiv.org/abs/2610.15139">arXiv</a>
+              <a href="https://openreview.net/forum?id=4DvSLh9jTY">OpenReview</a>
+              <a href="https://github.com/Avalon-S/dynamic-scaling-fails">Code</a>
+            </p>
+            <details class="more">
+              <summary>Abstract &amp; figures</summary>
+              <div class="abs">
+                <p><span class="lbl">Abstract</span>Linear-attention and state-space LLMs carry long context in a fixed-size recurrent state, and quantizing that state is the natural way to cut its cost during long decode. Unlike a weight tensor, the state is rewritten at every step, so a quantizer applied at each step sits inside the recurrence and its errors compound. INT4 that leaves synthetic recall perfectly intact at the start destroys it a thousand steps later. The mechanism is a feedback between the quantizer scale and the state it is derived from. Yoking that scale to a full-precision reference removes the resulting norm explosion entirely, yet recovers only 1.8 of the 5.4 nats lost, so numerical instability and functional degradation are separable failures. The remainder is a resolution problem that locating outliers does not solve, since every outlier-aware scheme here loses to plain persistent scaling. Allocating bits across layers does help, but under article-disjoint splits a learned allocation collapses onto the trivial rule of protecting the first few layers. Run out to 32K, group-wise INT4 is worth no more than discarding the state. Contain the scale rather than locate outliers, and report the decode horizon at which a bit-width was certified.</p>
+                <div class="gallery">
+                  <figure>
+                    <img src="pub_assets/dynscale_frontier.jpg" alt="Recall against decode horizon for several bit-widths, beside recurrent-state norm on a log scale showing dynamic INT4 inflating by orders of magnitude" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 01</span><b>The phenomenon.</b> (a) NIAH recall over 12 seeds against quantized decode horizon H. Every bit-width is intact at H=0 and decays as the state is overwritten; INT5 traces the frontier. (b) Mean recurrent-state norm on independent articles, log scale: per-token dynamic INT4 inflates it by two to three orders of magnitude, while the static curves and the unquantized reference coincide along the bottom.</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="pub_assets/dynscale_mechanism.jpg" alt="State norm and tail concentration over decode steps, expanding under dynamic INT4 and staying bounded once the quantizer scale is taken from the full-precision state" loading="lazy" />
+                    <figcaption><span class="fno">Fig. 02</span><b>The feedback, and cutting it.</b> (a) Single-layer decode trajectory, boxcar smoothed. Norm and tail concentration get separate axes because they carry different units; both expand under dynamic INT4 and stay bounded under a persistent scale. (b) Taking the quantizer step size from the FP state instead of the quantized one removes the explosion at both scales. The three columns are independent arms, not a time course.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="at mono"><span class="v">NeurIPS 2026</span>LCFM Workshop<br/>Non-archival</div>
+        </li>
+
+        <!-- 05 -->
+        <li data-area="memory">
+          <div class="no">05</div>
           <div>
             <h3>Retrieved but Not Delivered: Multimodal Memory Delivery for Long-Term Agents</h3>
             <p class="tldr">Between retrieving a memory and answering from it sits a stage evaluations never isolate: <em>delivery</em> &mdash; what of the retrieved memory reaches the model, and in what form. With the retrieved set held fixed, delivering the original pixels is worth <b>+13.87</b> points while making retrieval perfect adds <b>2.31</b>. DeliverMem trains nothing and leads both benchmarks from one fixed configuration.</p>
@@ -223,9 +256,9 @@
           <div class="at mono"><span class="v">Preprint</span>arXiv</div>
         </li>
 
-        <!-- 05 -->
+        <!-- 06 -->
         <li data-area="adversarial">
-          <div class="no">05</div>
+          <div class="no">06</div>
           <div>
             <h3>Median Temporal Ensembling: Training-Free Robust Aggregation for Action-Chunked Visuomotor Policies</h3>
             <p class="tldr">Temporal ensembling blends the overlapping predictions of an action-chunked policy with a weighted mean, whose breakdown point is <b>0</b> &mdash; one corrupted prediction moves it without bound. Taking the coordinate-wise <em>median</em> of the same predictions is a one-line change that needs no retraining: never worse across <b>25</b> settings and significantly better in <b>15</b>.</p>
@@ -255,9 +288,9 @@
           <div class="at mono"><span class="v">Preprint</span>arXiv</div>
         </li>
 
-        <!-- 06 -->
+        <!-- 07 -->
         <li data-area="mechinterp">
-          <div class="no">06</div>
+          <div class="no">07</div>
           <div>
             <h3>Refit the Probe: Single-Direction Ablation Is Not a Necessity Test</h3>
             <p class="tldr">Ablating the direction a probe found does not remove what the probe read &mdash; a refitted probe recovers its accuracy &mdash; so <b>neither a large task drop nor a near-zero one settles necessity</b>.</p>
@@ -279,9 +312,9 @@
           <div class="at mono"><span class="v">Preprint</span>arXiv</div>
         </li>
 
-        <!-- 07 -->
+        <!-- 08 -->
         <li data-area="mechinterp">
-          <div class="no">07</div>
+          <div class="no">08</div>
           <div>
             <h3>A Circuit, Not The Circuit: Non-Unique Causal Localisation of the Mamba-2 State Sink</h3>
             <p class="tldr">A probe&rsquo;s top units are routinely called <em>the</em> circuit. In Mamba-2 a <b>near-disjoint</b> head set matches their ablation effect &mdash; probing localises where state is linearly available, not where the computation is bottlenecked.</p>
@@ -309,9 +342,9 @@
           <div class="at mono"><span class="v">Preprint</span>arXiv</div>
         </li>
 
-        <!-- 08 -->
+        <!-- 09 -->
         <li data-area="others">
-          <div class="no">08</div>
+          <div class="no">09</div>
           <div>
             <h3>CL-RAG: A Closed-Loop Multimodal Retrieval-Augmented Generation Architecture for Robust Human-Robot Control Interaction</h3>
             <p class="who">Bowen Zhang, <b>Yuhang Jiang</b>, Lingxiang Hu, Dun Li, Qianqian Hu*</p>
@@ -322,9 +355,9 @@
           <div class="at mono"><span class="v">WRC SARA 2025</span>Oral</div>
         </li>
 
-        <!-- 09 -->
+        <!-- 10 -->
         <li data-area="others">
-          <div class="no">09</div>
+          <div class="no">10</div>
           <div>
             <h3>Improved lightweight identification of agricultural diseases based on MobileNetV3</h3>
             <p class="who"><b>Yuhang Jiang</b>*, Wenping Tong</p>
@@ -337,9 +370,9 @@
           <div class="at mono"><span class="v">CAIBDA 2022</span>Oral</div>
         </li>
 
-        <!-- 10 -->
+        <!-- 11 -->
         <li data-area="others">
-          <div class="no">10</div>
+          <div class="no">11</div>
           <div>
             <h3>Intelligent contract software for agricultural insurance compensation</h3>
             <p class="who">Software copyright &mdash; registration 2022SR1568111</p>
